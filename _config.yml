@@ -1,0 +1,32 @@
+# Permalinks
+permalink:      /:year-:month-:day/:title
+
+# Setup
+title:          Latin Computer Science Club
+paginate:       5
+baseurl:        ""
+url:            ""
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        :compressed
+
+# Build settings
+markdown:       kramdown
+
+# About
+author:
+  name:         Chris Reuter && Vedant Pathak
+  url:          ""
+  email:        creuter@lsoc.org || vpathak@lsoc.org
+
+# Custom vars
+version:        3.4.1
+github:
+  repo:         https://github.com/chesterhow/tale
+
+# Gems
+gems:
+  - jekyll-paginate
+

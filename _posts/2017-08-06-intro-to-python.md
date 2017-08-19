@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A (debatably) Brief Introduction to Python"
-author: "Vedant"
+author: "Vedant Pathak"
 ---
 
 CHAPTER 0: THE PYTHON FILE

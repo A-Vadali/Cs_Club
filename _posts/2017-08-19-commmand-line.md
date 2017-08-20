@@ -6,6 +6,8 @@ author: "Chris Reuter"
 
 What is the Command Line? Well it's the thing you see hackers typing into in the movies. You know with all the black and green text. Think of the command line as a more powerful remote for your computer.
 
+# For Macs
+
 How to open the command line. If your using a mac click on the search light and type terminal into the box and press enter. You should now have a box on the screen. That has something similar to this.
 
 ```
@@ -29,10 +31,14 @@ Pwd gives you the path of where you are on your computer.Pwd stands for print wo
 
 ```
 Chriss-MacBook-Air:~ chris$ ls
-Applications			Desktop				Library				PreVeil-Testing			Villefort			school
-Chris Reuter's CV.pdf		Documents			Movies				ProjectEuler			assignments			social.org
-Chris Reuter's CV1.pages	Downloads			Music				Public				bower.json			tale-master
-Chris Reuter's CV1.pdf		Haskell				Pictures			Purescript			lc.hs
+Applications			Desktop				Library
+PreVeil-Testing			Villefort			school
+Chris Reuter's CV.pdf		Documents			Movies
+ProjectEuler			assignments			social.org
+Chris Reuter's CV1.pages	Downloads			Music
+Public				bower.json			tale-master
+Chris Reuter's CV1.pdf		Haskell				Pictures
+Purescript			lc.hs
 Chriss-MacBook-Air:~ chris$ 
 
 
@@ -120,29 +126,40 @@ Let's see what's in my Downloads.
 
 ```
 Chriss-MacBook-Air:Downloads chris$ ls
-18620254_1987587898129254_5717056479093310776_n.jpg	Doc Apps—USSoc.docx					alex.pem
-2012-08-01 pro-se-reply-brief.August 2012.pdf		Epic_53.0.2785.143 (1).dmg				captain-log
-547409.jpg						Epic_53.0.2785.143 (2).dmg				captain-log-20170815T032940Z-001.zip
-760731.jpg						Epic_53.0.2785.143.dmg					chromedriver_mac64.zip
-760733.png						Firefox							console-master.zip
-760734.png						Firefox 54.0.1.dmg					fish-1.1
-760738.jpg						Firefox.zip						fish-1.1.tar.gz
-Chris Reuter CV (1).pdf					KeePass2.23.app						geckodriver-v0.18.0-macos.tar.gz
-Chris Reuter CV (2).pdf					KeePass2.23.zip						github-recovery-codes.txt
-Chris Reuter CV.pdf					MacPass-0.6.2-alpha.zip					introtopython-ch0.pdf
-Chris Reuter's CV (1).docx				MacPass.app						material-bliss-jekyll-theme-master
-Chris Reuter's CV.docx					Pop punk.docx						material-bliss-jekyll-theme-master.zip
-Chris Reuter's CV.pdf					RHITAthletics.jpg					pass.kdbx
-Chris Reuter's CV1.docx					Recon Docs USSocREV (1).docx				ruby-2.4.1.tar.gz
-Chris Reuter's CV1.pages				Recon Docs USSocREV.docx				rubygems-2.6.12
-Chris Reuter's CV1.pdf					Remembering The Day After.REV'17.docx			rubygems-2.6.12.tgz
-Chris Reuter's CV3 (1).docx				TorBrowser-7.0.4-osx64_en-US.dmg			tale-maste 2
-Chris Reuter's CV3 (1).pages				USSoc.Project'17REV1.docx				tale-master
-Chris Reuter's CV3.docx					USSoc.Project'17REV2.docx				tale-master (1).zip
-College Counseling_Autobiography.pdf			Unconfirmed 33452.crdownload				tale-master-1.zip
-College Data Sheet.pdf					Unconfirmed 407272.crdownload				xmoto-0.5.10-macosx.zip
-Critical Essay Tips (1).docx				Unconfirmed 751700.crdownload
-Critical Essay Tips.docx				X-Moto.app
+18620254_1987587898129254_5717056479093310776_n.jpg	Doc Apps—USSoc.docx
+alex.pem						2012-08-01 pro-se-reply-brief.August 2012.pdf
+Epic_53.0.2785.143 (1).dmg				captain-log
+547409.jpg						Epic_53.0.2785.143 (2).dmg
+captain-log-20170815T032940Z-001.zip			760731.jpg
+Epic_53.0.2785.143.dmg					chromedriver_mac64.zip
+760733.png						Firefox
+console-master.zip					760734.png
+Firefox 54.0.1.dmg					fish-1.1
+760738.jpg						Firefox.zip
+fish-1.1.tar.gz						Chris Reuter CV (1).pdf
+KeePass2.23.app						geckodriver-v0.18.0-macos.tar.gz
+Chris Reuter CV (2).pdf					KeePass2.23.zip
+github-recovery-codes.txt				Chris Reuter CV.pdf
+MacPass-0.6.2-alpha.zip					introtopython-ch0.pdf
+Chris Reuter's CV (1).docx				MacPass.app
+material-bliss-jekyll-theme-master			Chris Reuter's CV.docx
+Pop punk.docx						material-bliss-jekyll-theme-master.zip
+Chris Reuter's CV.pdf					RHITAthletics.jpg
+pass.kdbx      						Chris Reuter's CV1.docx
+Recon Docs USSocREV (1).docx				ruby-2.4.1.tar.gz
+Chris Reuter's CV1.pages				Recon Docs USSocREV.docx
+rubygems-2.6.12						Chris Reuter's CV1.pdf
+Remembering The Day After.REV'17.docx			rubygems-2.6.12.tgz
+Chris Reuter's CV3 (1).docx				TorBrowser-7.0.4-osx64_en-US.dmg
+tale-maste 2   	   					Chris Reuter's CV3 (1).pages
+USSoc.Project'17REV1.docx				tale-master
+Chris Reuter's CV3.docx					USSoc.Project'17REV2.docx
+tale-master (1).zip					College Counseling_Autobiography.pdf
+Unconfirmed 33452.crdownload				 tale-master-1.zip
+College Data Sheet.pdf					Unconfirmed 407272.crdownload
+xmoto-0.5.10-macosx.zip					Critical Essay Tips (1).docx
+Unconfirmed 751700.crdownload				Critical Essay Tips.docx
+X-Moto.app
 Chriss-MacBook-Air:Downloads chris$ 
 
 
@@ -210,22 +227,30 @@ Yay that's gone. Now how about those .crdownload files. To delete this we can us
 ```
 Chriss-MacBook-Air:Downloads chris$ rm *.crdownload
 Chriss-MacBook-Air:Downloads chris$ ls
-18620254_1987587898129254_5717056479093310776_n.jpg	KeePass2.23.app						fish-1.1
-2012-08-01 pro-se-reply-brief.August 2012.pdf		KeePass2.23.zip						fish-1.1.tar.gz
-547409.jpg						MacPass-0.6.2-alpha.zip					geckodriver-v0.18.0-macos.tar.gz
-760731.jpg						MacPass.app						github-recovery-codes.txt
-760733.png						Pop punk.docx						introtopython-ch0.pdf
-760734.png						RHITAthletics.jpg					material-bliss-jekyll-theme-master
-760738.jpg						Recon Docs USSocREV (1).docx				material-bliss-jekyll-theme-master.zip
-College Counseling_Autobiography.pdf			Recon Docs USSocREV.docx				pass.kdbx
-College Data Sheet.pdf					Remembering The Day After.REV'17.docx			ruby-2.4.1.tar.gz
-Critical Essay Tips (1).docx				TorBrowser-7.0.4-osx64_en-US.dmg			rubygems-2.6.12
-Critical Essay Tips.docx				USSoc.Project'17REV1.docx				rubygems-2.6.12.tgz
-Doc Apps—USSoc.docx					USSoc.Project'17REV2.docx				tale-maste 2
-Epic_53.0.2785.143 (1).dmg				X-Moto.app						tale-master
-Epic_53.0.2785.143 (2).dmg				alex.pem						tale-master (1).zip
-Epic_53.0.2785.143.dmg					captain-log						tale-master-1.zip
-Firefox							captain-log-20170815T032940Z-001.zip			xmoto-0.5.10-macosx.zip
+18620254_1987587898129254_5717056479093310776_n.jpg	KeePass2.23.app
+fish-1.1						2012-08-01 pro-se-reply-brief.August 2012.pdf
+KeePass2.23.zip						fish-1.1.tar.gz
+547409.jpg						MacPass-0.6.2-alpha.zip
+geckodriver-v0.18.0-macos.tar.gz			760731.jpg
+MacPass.app						github-recovery-codes.txt
+760733.png						Pop punk.docx
+introtopython-ch0.pdf					760734.png
+RHITAthletics.jpg					material-bliss-jekyll-theme-master
+760738.jpg						Recon Docs USSocREV (1).docx
+material-bliss-jekyll-theme-master.zip			College Counseling_Autobiography.pdf
+Recon Docs USSocREV.docx				pass.kdbx
+College Data Sheet.pdf					Remembering The Day After.REV'17.docx
+ruby-2.4.1.tar.gz					Critical Essay Tips (1).docx
+TorBrowser-7.0.4-osx64_en-US.dmg			rubygems-2.6.12
+Critical Essay Tips.docx				USSoc.Project'17REV1.docx
+rubygems-2.6.12.tgz					Doc Apps—USSoc.docx
+USSoc.Project'17REV2.docx				tale-maste 2
+Epic_53.0.2785.143 (1).dmg				X-Moto.app
+tale-master	   					Epic_53.0.2785.143 (2).dmg
+alex.pem						tale-master (1).zip
+Epic_53.0.2785.143.dmg					captain-log
+tale-master-1.zip					Firefox
+captain-log-20170815T032940Z-001.zip			xmoto-0.5.10-macosx.zip
 Firefox 54.0.1.dmg					chromedriver_mac64.zip
 Firefox.zip						console-master.zip
 Chriss-MacBook-Air:Downloads chris$ 
@@ -320,3 +345,7 @@ Chriss-MacBook-Air:Downloads chris$
 Wow very clean. 
 
 This has only covered a couple of command line commands but I hope it was a good introduction. If you want a full list of commands you can type `ls /usr/bin/`. There's a lot of them but with `man` or google you can figure most of them out.
+
+# for Linux
+
+Chances are if your running linux you already know this stuff.

@@ -18,16 +18,15 @@ main function (more on functions later). Whatever code you write in the python f
 regardless of where it is located, will be run by the compiler. Of course, bespoke
 functions will not be run unless called in the file. Speaking of which, let’s call python’s
 built-in [`print()`](https://docs.python.org/2/tutorial/inputoutput.html) function on line 1 of our blank python file. It should look a little
-something like this:
 ```python
+something like this:
 print("Hello, World")
-
 ```
 
 
 As is the case with all functions, the [`print()`](https://docs.python.org/2/tutorial/inputoutput.html) function processes whatever is inside the
 parentheses. More on [`print():`](https://docs.python.org/2/tutorial/inputoutput.html) this function will pretty much output whatever is passed
-through the parentheses, which makes it very useful for debugging.
+through the parentheses, which makes it very useful for debugging.b
 Now that we’ve got something in our python file, let’s do something with it! Go back to
 your command line window and type in [`python <filename>.py`](http://pythoncentral.io/execute-python-script-file-shell/), of course replacing
 [`<filename>`](https://stackoverflow.com/questions/8822335/what-do-the-python-file-extensions-pyc-pyd-pyo-stand-for) with whatever you named your file. The output should be identical to this:

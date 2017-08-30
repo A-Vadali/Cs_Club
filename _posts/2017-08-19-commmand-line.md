@@ -2,7 +2,7 @@
 layout: post
 title: "How to use the command line"
 author: "Chris Reuter"
-published: false
+
 ---
 
 What is the Command Line? Well it's the thing you see hackers typing into in the movies. You know with all the black and green text. Think of the command line as a more powerful remote for your computer.
@@ -187,40 +187,39 @@ To delete a file we can use the command rm. Be warned rm doesn't move things int
     Chriss-MacBook-Air:Downloads chris$ rm Chris\ Reuter\ CV.pdf
     Chriss-MacBook-Air:Downloads chris$ ls
     18620254_1987587898129254_5717056479093310776_n.jpg	Doc Apps—USSoc.docx
-    X-Moto.app 2012-08-01 pro-se-reply-brief.August 2012.pdf		Epic_53.0.2785.143 (1).dmg
-    alex.pem
-547409.jpg						Epic_53.0.2785.143 (2).dmg
-    captain-log
+    X-Moto.app 						2012-08-01 pro-se-reply-brief.August 2012.pdf
+    alex.pem						captain-log
+    547409.jpg						Epic_53.0.2785.143 (2).dmg
     760731.jpg						Epic_53.0.2785.143.dmg
-    captain-log-20170815T032940Z-001.zip                760733.png
-    Firefox						chromedriver_mac64.zip
+    captain-log-20170815T032940Z-001.zip			760733.png
+    Firefox							chromedriver_mac64.zip
     760734.png						Firefox 54.0.1.dmg
     console-master.zip					760738.jpg
     Firefox.zip						fish-1.1
-    Chris Reuter CV (1).pdf				KeePass2.23.app
+    Chris Reuter CV (1).pdf					KeePass2.23.app
     fish-1.1.tar.gz 					Chris Reuter CV (2).pdf
-    KeePass2.23.zip					geckodriver-v0.18.0-macos.tar.gz
+    KeePass2.23.zip					        geckodriver-v0.18.0-macos.tar.gz
     Chris Reuter's CV (1).docx				MacPass-0.6.2-alpha.zip
     github-recovery-codes.txt				Chris Reuter's CV.docx
     MacPass.app						introtopython-ch0.pdf
-    Chris Reuter's CV.pdf				Pop punk.docx
+    Chris Reuter's CV.pdf					Pop punk.docx
     material-bliss-jekyll-theme-master			Chris Reuter's CV1.docx
     RHITAthletics.jpg					material-bliss-jekyll-theme-master.zip
     Chris Reuter's CV1.pages				Recon Docs USSocREV (1).docx
     pass.kdbx	   					Chris Reuter's CV1.pdf
     Recon Docs USSocREV.docx				ruby-2.4.1.tar.gz
-   Chris Reuter's CV3 (1).docx				Remembering The Day After.REV'17.docx
-   rubygems-2.6.12    					Chris Reuter's CV3 (1).pages
-   TorBrowser-7.0.4-osx64_en-US.dmg			rubygems-2.6.12.tgz
-   Chris Reuter's CV3.docx				USSoc.Project'17REV1.docx
-   tale-maste 2	  					College Counseling_Autobiography.pdf
-   USSoc.Project'17REV2.docx				tale-master
-   College Data Sheet.pdf				Unconfirmed 33452.crdownload
-   tale-master (1).zip					Critical Essay Tips (1).docx
-   Unconfirmed 407272.crdownload			tale-master-1.zip
-   Critical Essay Tips.docx				Unconfirmed 751700.crdownload
-   xmoto-0.5.10-macosx.zip
-   Chriss-MacBook-Air:Downloads chris$ 
+    Chris Reuter's CV3 (1).docx				Remembering The Day After.REV'17.docx
+    rubygems-2.6.12    					Chris Reuter's CV3 (1).pages
+    TorBrowser-7.0.4-osx64_en-US.dmg			rubygems-2.6.12.tgz
+    Chris Reuter's CV3.docx					USSoc.Project'17REV1.docx
+    tale-maste 2	  					College Counseling_Autobiography.pdf
+    USSoc.Project'17REV2.docx				tale-master
+    College Data Sheet.pdf					Unconfirmed 33452.crdownload
+    tale-master (1).zip					Critical Essay Tips (1).docx
+    Unconfirmed 407272.crdownload				tale-master-1.zip
+    Critical Essay Tips.docx				Unconfirmed 751700.crdownload
+    xmoto-0.5.10-macosx.zip					Epic_53.0.2785.143 (1).dmg
+    Chriss-MacBook-Air:Downloads chris$ 
 
 
 Now it's gone but if I delete one file at a time it's going to take forever! Unix has this thing called file matching which it pretty cool. If I want to delete all files starting with Chris\ Reuter. I can just type rm Chris\ Reuter*. The * is called a wild card and it means to delete every file that starts with Chris Reuter.
@@ -336,22 +335,22 @@ Alex.pem and github-recover-codes.txt are also important files so let's move the
 
     Chriss-MacBook-Air:Downloads chris$ ls
     18620254_1987587898129254_5717056479093310776_n.jpg	Firefox.zip						
-    console-master.zip 2012-08-01 pro-se-reply-brief.August							2012.pdf		
-    KeePass2.23.app    		  								fish-1.1
+    console-master.zip 2012-08-01 pro-se-reply-brief.August	2012.pdf		
+    KeePass2.23.app    		  			fish-1.1
     547409.jpg						KeePass2.23.zip						
-    fish-1.1.tar.gz					760731.jpg						
+    fish-1.1.tar.gz						760731.jpg						
     MacPass-0.6.2-alpha.zip					geckodriver-v0.18.0-macos.tar.gz
     760733.png						MacPass.app		
-    introtopython-ch0.pdf				760734.png					
+    introtopython-ch0.pdf					760734.png					
     Pop punk.docx						material-bliss-jekyll-theme-master
     760738.jpg						RHITAthletics.jpg			
-    material-bliss-jekyll-theme-master.zip              College Counseling_Autobiography.pdf		
+    material-bliss-jekyll-theme-master.zip              	College Counseling_Autobiography.pdf		
     Recon Docs USSocREV (1).docx				ruby-2.4.1.tar.gz
     College Data Sheet.pdf					Recon Docs USSocREV.docx		
     rubygems-2.6.12						Critical Essay Tips (1).docx		
     Remembering The Day After.REV'17.docx			rubygems-2.6.12.tgz
     Critical Essay Tips.docx				TorBrowser-7.0.4-osx64_en-US.dmg	
-    tale-maste 2   					Doc Apps—USSoc.docx		
+    tale-maste 2   						Doc Apps—USSoc.docx		
     USSoc.Project'17REV1.docx				tale-master
     Epic_53.0.2785.143 (1).dmg				USSoc.Project'17REV2.docx
     tale-master (1).zip					Epic_53.0.2785.143 (2).dmg\
@@ -383,7 +382,8 @@ Those .jpgs are wallpapers from the movie The Grand Budapest Hotel, which I high
     captain-log-20170815T032940Z-001.zip		rubygems-2.6.12.tgz
     Critical Essay Tips.docx			MacPass.app		
     chromedriver_mac64.zip				tale-maste 2
-    Doc Apps—USSoc.docx				Pop punk.docx					console-master.zip				tale-master
+    Doc Apps—USSoc.docx				Pop punk.docx			
+    console-master.zip				tale-master
     Epic_53.0.2785.143 (1).dmg			Recon Docs USSocREV (1).docx	
     fish-1.1					tale-master (1).zip
     Epic_53.0.2785.143 (2).dmg			Recon Docs USSocREV.docx

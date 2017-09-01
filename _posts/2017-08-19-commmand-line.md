@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "How to use the command line"
+title: "How to be a command line wizard"
 author: "Chris Reuter"
-
 ---
 
-What is the Command Line? Well it's the thing you see hackers typing into in the movies. You know with all the black and green text. Think of the command line as a more powerful remote for your computer.
+What is the Command Line? Well it's the thing you see hackers typing into in the [`movies`](https://www.youtube.com/watch?v=dFUlAQZB9Ng). You know with all the [`black and green text`](http://hackertyper.com/). Think of the command line as a control panel for your computer.
 
 # For Macs
 
@@ -16,9 +15,7 @@ How to open the command line. If your using a mac click on the search light and 
     Chriss-MacBook-Air:~ chris$
 
 
-You are now into the mainframe!
-
-So what sorts of things can you type into that box? Well first off you have to know how to navigate. To see where you are you can type pwd.
+What can you type into the terminal? Well, you have to know how to navigate. To see where you are you can type [`pwd`](https://www.tcl.tk/man/tcl8.4/TclCmd/pwd.htm).
 
 
     Last login: Sat Aug 19 14:01:03 on ttys000
@@ -27,7 +24,7 @@ So what sorts of things can you type into that box? Well first off you have to k
     Chriss-MacBook-Air:~ chris$ 
 
 
-Pwd gives you the path of where you are on your computer.Pwd stands for print working directory. A lot of commands have been shortened because when they writing unix back in the day, they didn't wan't to type out a whole command. You may not be familair with the file structure of a unix system but /Users/chris is my home directory. In this directory is my Downloads, Desktop, Pictures ... etc Files. So how do we see these files. Type ls.
+[`pwd`](https://www.tcl.tk/man/tcl8.4/TclCmd/pwd.htm) gives you the [`path`](https://www.computerhope.com/jargon/p/path.htm) of where you are on your computer. [`Pwd stands for print working directory`](http://www.unixguide.net/unix/faq/1.3.shtml). A lot of commands are shortened because they're quicker to type. Home directories are your starting folder, when you launch a terminal it starts in the home directory, /Users/chris is my home directory. In this directory is my Downloads, Desktop, Pictures ... etc folders. To see whats in your home directory type [`ls`](http://linuxcommand.org/lc3_man_pages/ls1.html).
 
 
     Chriss-MacBook-Air:~ chris$ ls
@@ -42,8 +39,8 @@ Pwd gives you the path of where you are on your computer.Pwd stands for print wo
     Chriss-MacBook-Air:~ chris$ 
 
 
-As you can see I have a lot of folders in my home directory but you should see something similar.
-If at any point you wan't to read more about a commmand, say ls you can type `man ls`
+As you can see I have a lot of folders in my home directory, you should see something similar.
+If at any point you want to read more about a command, say [`ls`](http://linuxcommand.org/lc3_man_pages/ls1.html) you can type [`man ls`](https://www.tutorialspoint.com/unix_commands/man.htm)
 
 
     LS(1)                     BSD General Commands Manual                    LS(1)
@@ -128,16 +125,16 @@ If at any point you wan't to read more about a commmand, say ls you can type `ma
      If the output is to a terminal, a total sum for all the file sizes is output on
      a line before the long listing.
 
-You can use the arrow keys to move up and down and type q to quit. That's a lot of information I know. But you don't have to memorize it! You can just look it up at any time. Man sounds for manual if you haven't guessed that.
+You can use the arrow keys to move up and down and type q to quit. That's a lot of information, but you don't have to memorize it! You can just look it up at any time. Man stands for manual if you haven't already guessed that.
 
-So know we know how to see where we are and see what's there let's learn how to change where we are. To change where we are you can type cd. So from my home directory let's say I wan't to go to my downloads. I can type cd Downloads/
+So now we know how to see where we are and see what's there. To change where we are you can use[`cd`](http://linuxcommand.org/lc3_man_pages/cdh.html). So from my home directory let's say I want to go to my downloads. I can type cd Downloads/
 
 
     Chriss-MacBook-Air:~ chris$ cd Downloads/
     Chriss-MacBook-Air:Downloads chris$ 
 
 
-The slash at the end means it's a directory, directory is just computer nerd speak for a folder. Notice how the prompt changes to include Downloads, the prompt is the thing that occurs before the
+The slash at the end means it's a directory. Directory is just computer nerd speak for a folder. Notice how the [`prompt`](https://en.wikibooks.org/wiki/Guide_to_Unix/Explanations/Shell_Prompt) changes to include Downloads, the prompt is the thing that occurs before the
 `$` sign.
 
 Let's see what's in my Downloads.
@@ -180,8 +177,8 @@ Let's see what's in my Downloads.
     X-Moto.app
     Chriss-MacBook-Air:Downloads chris$ 
 
-Wow that's a lot of stuff I should really delet some of it.
-To delete a file we can use the command rm. Be warned rm doesn't move things into the trash bin it just deletes it off the hardrive never to be found again so `once you rm something it is well and truly gone`. Consider yourself officially warned. I don't need all these copies of my cv so let's delete them. To delete Chris Reuter CV.pdf I can type `rm Chris\ Reuter\ CV.pdf`. The \ means to escape the spaces. Spaces have a special meaning in the command line. Without the \'s rm would try to delete the file Chris, the file Reuter and the file CV.pdf. Since rm interprets everything seperated by a space as a different file. So when we add \ it means that space just means a space and not a different file.
+Wow, that's a lot of stuff! I should really delete some of it.
+To delete a file we can use the [`rm`](https://linux.die.net/man/1/rm) command. Be warned rm doesn't move things into the trash bin. It just deletes it. `once you rm something it is well and truly gone`. [`Consider yourself officially warned`](https://unix.stackexchange.com/questions/2677/recovering-accidentally-deleted-files?noredirect=1&lq=1). Most command line tools assume you know what your doing, so it's possible to break your OS if you delete the wrong file. I don't need all these copies of my CV so let's delete them. To delete Chris Reuter CV.pdf I can type `rm Chris\ Reuter\ CV.pdf`. The \ escapes the spaces. Spaces have a special meaning in the command line. Without the \\ rm would try to delete the file Chris, the file Reuter and the file CV.pdf. Since rm interprets everything separated by a space as a different file. So when we add a \ it means that the space just means a regular space and not a different file.
 
 
     Chriss-MacBook-Air:Downloads chris$ rm Chris\ Reuter\ CV.pdf
@@ -222,7 +219,7 @@ To delete a file we can use the command rm. Be warned rm doesn't move things int
     Chriss-MacBook-Air:Downloads chris$ 
 
 
-Now it's gone but if I delete one file at a time it's going to take forever! Unix has this thing called file matching which it pretty cool. If I want to delete all files starting with Chris\ Reuter. I can just type rm Chris\ Reuter*. The * is called a wild card and it means to delete every file that starts with Chris Reuter.
+Now it's gone. However, if I delete one file at a time it's going to take forever! Unix has a feature called the [`wild card`](http://www.robelle.com/smugbook/wildcard.html) which allows you to delete multiple files at once. If I want to delete all files starting with Chris\ Reuter. I can just type rm Chris\ Reuter*. The * is called a wild card and it means to delete every file that starts with Chris Reuter.
 
 
     Chriss-MacBook-Air:Downloads chris$ rm Chris\ Reuter*
@@ -257,7 +254,7 @@ Now it's gone but if I delete one file at a time it's going to take forever! Uni
     chromedriver_mac64.zip
     Chriss-MacBook-Air:Downloads chris$ 
 
-Yay that's gone. Now how about those .crdownload files. To delete this we can use the wild card again. To delete everything ending with .crownload I can use  `rm *.crdownload`. Now it pattern matches at the front.
+Now that that's gone. How about those .crdownload files? To delete these we can use the wild card again. To delete everything ending with .crownload I can use  `rm *.crdownload`. Now it pattern matches at the front.
 
 
     Chriss-MacBook-Air:Downloads chris$ rm *.crdownload
@@ -293,8 +290,8 @@ Yay that's gone. Now how about those .crdownload files. To delete this we can us
 
 
 
-Pass.kdbx is an important file so let's move that into the home directory to save it for later.
-To move a file we use the command `mv`. mv takes to arguments the file to move and where it's going. To move my pass.kdbx file back into my home directory I can write `mv pass.kdbx ../"
+Pass.kdbx is an important password file so let's move that into the home directory to save it for later.
+To move a file we use the command [`mv`](https://linux.die.net/man/1/mv). Mv takes two arguments the file to move and where it's going. To move my pass.kdbx file back into my home directory I can write `mv pass.kdbx ../`. `../` is a shortcut to move the file into the directory above it.
 
 
     Chriss-MacBook-Air:Downloads chris$ mv pass.kdbx ../
@@ -330,7 +327,7 @@ To move a file we use the command `mv`. mv takes to arguments the file to move a
 
 
 
-Alex.pem and github-recover-codes.txt are also important files so let's move the home for safe keeping.
+Alex.pem and github-recover-codes.txt are also important files so let's move into my home for safe keeping.
 
 
     Chriss-MacBook-Air:Downloads chris$ ls
@@ -362,7 +359,7 @@ Alex.pem and github-recover-codes.txt are also important files so let's move the
     Chriss-MacBook-Air:Downloads chris$ 
 
 
-Those .jpgs are wallpapers from the movie The Grand Budapest Hotel, which I highly recommend. I could use move those into the home directory but let's move them into a wallpaper directory. To make a folder we can use the `mkdir` commmand. So let's make a wallpaper direcorty in the home folder
+Those .jpgs are wallpapers from the movie [`The Grand Budapest Hotel`](https://www.youtube.com/watch?v=1Fg5iWmQjwk), which I highly recommend. I could just move those into the home directory, but let's move them into a wallpaper directory. To make a directory we can use the [`mkdir`](https://linux.die.net/man/1/mkdir) command. So let's make a wallpaper directory in the home folder.
 
 
     Chriss-MacBook-Air:Downloads chris$ mkdir ../wallpapers
@@ -394,14 +391,12 @@ Those .jpgs are wallpapers from the movie The Grand Budapest Hotel, which I high
 
 
 
-I don't need anymore of the stuff in my downloads so let's nuke it. Rm * will delete everything in a directoy.
+I don't need anymore of this stuff in my downloads, so let's nuke it. `Rm -rf *` will delete everything in a directory. The `-rf` just means to also delete the directories in the directories where deleting things.
 
 
     Chriss-MacBook-Air:Downloads chris$ rm -rf *
     Chriss-MacBook-Air:Downloads chris$ ls
     Chriss-MacBook-Air:Downloads chris$ 
 
-Wow very clean. 
-
-This has only covered a hand full of commands but I hope it was a stepping stone into the world of the command line. If you want a full list of commands on your system you can type `ls /usr/bin/`. There's a lot of them but with `man` or google you can figure most of them out.
+This has only covered a hand full of commands, but I hope it was a stepping stone into the world of the command line. If you want a full list of commands on your system you can type `ls /usr/bin/`. There's a lot of them, but with `man` or your friend Google you can figure most of them out.
 

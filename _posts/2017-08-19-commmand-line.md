@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to be a command line wizard"
+title: " Crush the command line"
 author: "Chris Reuter"
 ---
 

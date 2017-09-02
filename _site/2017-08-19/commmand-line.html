@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  <style>
+  img[alt=dog] { width: 200px; }
+  </style>
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
     
-      How to use the command line &middot; Latin Computer Science Club
+       Crush the command line &middot; Latin Computer Science Club
     
   </title>
 
@@ -41,10 +43,10 @@
     
   </div>
 
-  <h1 class="post-title">How to use the command line</h1>
+  <h1 class="post-title"> Crush the command line</h1>
   <div class="post-line"></div>
 
-  <p>What is the Command Line? Well it’s the thing you see hackers typing into in the movies. You know with all the black and green text. Think of the command line as a more powerful remote for your computer.</p>
+  <p>What is the Command Line? Well it’s the thing you see hackers typing into in the <a href="https://www.youtube.com/watch?v=dFUlAQZB9Ng"><code class="highlighter-rouge">movies</code></a>. You know with all the <a href="http://hackertyper.com/"><code class="highlighter-rouge">black and green text</code></a>. Think of the command line as a control panel for your computer.</p>
 
 <h1 id="for-macs">For Macs</h1>
 
@@ -55,9 +57,7 @@ Chriss-MacBook-Air:~ chris$
 </code></pre>
 </div>
 
-<p>You are now into the mainframe!</p>
-
-<p>So what sorts of things can you type into that box? Well first off you have to know how to navigate. To see where you are you can type pwd.</p>
+<p>What can you type into the terminal? Well, you have to know how to navigate. To see where you are you can type <a href="https://www.tcl.tk/man/tcl8.4/TclCmd/pwd.htm"><code class="highlighter-rouge">pwd</code></a>.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Last login: Sat Aug 19 14:01:03 on ttys000
 Chriss-MacBook-Air:~ chris$ pwd
@@ -66,7 +66,7 @@ Chriss-MacBook-Air:~ chris$
 </code></pre>
 </div>
 
-<p>Pwd gives you the path of where you are on your computer.Pwd stands for print working directory. A lot of commands have been shortened because when they writing unix back in the day, they didn’t wan’t to type out a whole command. You may not be familair with the file structure of a unix system but /Users/chris is my home directory. In this directory is my Downloads, Desktop, Pictures … etc Files. So how do we see these files. Type ls.</p>
+<p><a href="https://www.tcl.tk/man/tcl8.4/TclCmd/pwd.htm"><code class="highlighter-rouge">pwd</code></a> gives you the <a href="https://www.computerhope.com/jargon/p/path.htm"><code class="highlighter-rouge">path</code></a> of where you are on your computer. <a href="http://www.unixguide.net/unix/faq/1.3.shtml"><code class="highlighter-rouge">Pwd stands for print working directory</code></a>. A lot of commands are shortened because they’re quicker to type. Home directories are your starting folder, when you launch a terminal it starts in the home directory, /Users/chris is my home directory. In this directory is my Downloads, Desktop, Pictures … etc folders. To see whats in your home directory type <a href="http://linuxcommand.org/lc3_man_pages/ls1.html"><code class="highlighter-rouge">ls</code></a>.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:~ chris$ ls
 Applications			Desktop				Library
@@ -81,8 +81,8 @@ Chriss-MacBook-Air:~ chris$
 </code></pre>
 </div>
 
-<p>As you can see I have a lot of folders in my home directory but you should see something similar.
-If at any point you wan’t to read more about a commmand, say ls you can type <code class="highlighter-rouge">man ls</code></p>
+<p>As you can see I have a lot of folders in my home directory, you should see something similar.
+If at any point you want to read more about a command, say <a href="http://linuxcommand.org/lc3_man_pages/ls1.html"><code class="highlighter-rouge">ls</code></a> you can type <a href="https://www.tutorialspoint.com/unix_commands/man.htm"><code class="highlighter-rouge">man ls</code></a></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>LS(1)                     BSD General Commands Manual                    LS(1)
 
@@ -168,16 +168,16 @@ DESCRIPTION
 </code></pre>
 </div>
 
-<p>You can use the arrow keys to move up and down and type q to quit. That’s a lot of information I know. But you don’t have to memorize it! You can just look it up at any time. Man sounds for manual if you haven’t guessed that.</p>
+<p>You can use the arrow keys to move up and down and type q to quit. That’s a lot of information, but you don’t have to memorize it! You can just look it up at any time. Man stands for manual if you haven’t already guessed that.</p>
 
-<p>So know we know how to see where we are and see what’s there let’s learn how to change where we are. To change where we are you can type cd. So from my home directory let’s say I wan’t to go to my downloads. I can type cd Downloads/</p>
+<p>So now we know how to see where we are and see what’s there. To change where we are you can use<a href="http://linuxcommand.org/lc3_man_pages/cdh.html"><code class="highlighter-rouge">cd</code></a>. So from my home directory let’s say I want to go to my downloads. I can type cd Downloads/</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:~ chris$ cd Downloads/
 Chriss-MacBook-Air:Downloads chris$ 
 </code></pre>
 </div>
 
-<p>The slash at the end means it’s a directory, directory is just computer nerd speak for a folder. Notice how the prompt changes to include Downloads, the prompt is the thing that occurs before the
+<p>The slash at the end means it’s a directory. Directory is just computer nerd speak for a folder. Notice how the <a href="https://en.wikibooks.org/wiki/Guide_to_Unix/Explanations/Shell_Prompt"><code class="highlighter-rouge">prompt</code></a> changes to include Downloads, the prompt is the thing that occurs before the
 <code class="highlighter-rouge">$</code> sign.</p>
 
 <p>Let’s see what’s in my Downloads.</p>
@@ -221,8 +221,8 @@ Chriss-MacBook-Air:Downloads chris$
 </code></pre>
 </div>
 
-<p>Wow that’s a lot of stuff I should really delet some of it.
-To delete a file we can use the command rm. Be warned rm doesn’t move things into the trash bin it just deletes it off the hardrive never to be found again so <code class="highlighter-rouge">once you rm something it is well and truly gone</code>. Consider yourself officially warned. I don’t need all these copies of my cv so let’s delete them. To delete Chris Reuter CV.pdf I can type <code class="highlighter-rouge">rm Chris\ Reuter\ CV.pdf</code>. The \ means to escape the spaces. Spaces have a special meaning in the command line. Without the 's rm would try to delete the file Chris, the file Reuter and the file CV.pdf. Since rm interprets everything seperated by a space as a different file. So when we add \ it means that space just means a space and not a different file.</p>
+<p>Wow, that’s a lot of stuff! I should really delete some of it.
+To delete a file we can use the <a href="https://linux.die.net/man/1/rm"><code class="highlighter-rouge">rm</code></a> command. Be warned rm doesn’t move things into the trash bin. It just deletes it. <code class="highlighter-rouge">once you rm something it is well and truly gone</code>. <a href="https://unix.stackexchange.com/questions/2677/recovering-accidentally-deleted-files?noredirect=1&amp;lq=1"><code class="highlighter-rouge">Consider yourself officially warned</code></a>. Most command line tools assume you know what your doing, so it’s possible to break your OS if you delete the wrong file. I don’t need all these copies of my CV so let’s delete them. To delete Chris Reuter CV.pdf I can type <code class="highlighter-rouge">rm Chris\ Reuter\ CV.pdf</code>. The \ escapes the spaces. Spaces have a special meaning in the command line. Without the \ rm would try to delete the file Chris, the file Reuter and the file CV.pdf. Since rm interprets everything separated by a space as a different file. So when we add a \ it means that the space just means a regular space and not a different file.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm Chris\ Reuter\ CV.pdf
 Chriss-MacBook-Air:Downloads chris$ ls
@@ -263,7 +263,7 @@ Chriss-MacBook-Air:Downloads chris$
 </code></pre>
 </div>
 
-<p>Now it’s gone but if I delete one file at a time it’s going to take forever! Unix has this thing called file matching which it pretty cool. If I want to delete all files starting with Chris\ Reuter. I can just type rm Chris\ Reuter*. The * is called a wild card and it means to delete every file that starts with Chris Reuter.</p>
+<p>Now it’s gone. However, if I delete one file at a time it’s going to take forever! Unix has a feature called the <a href="http://www.robelle.com/smugbook/wildcard.html"><code class="highlighter-rouge">wild card</code></a> which allows you to delete multiple files at once. If I want to delete all files starting with Chris\ Reuter. I can just type rm Chris\ Reuter*. The * is called a wild card and it means to delete every file that starts with Chris Reuter.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm Chris\ Reuter*
 Chriss-MacBook-Air:Downloads chris$ ls
@@ -299,7 +299,7 @@ Chriss-MacBook-Air:Downloads chris$
 </code></pre>
 </div>
 
-<p>Yay that’s gone. Now how about those .crdownload files. To delete this we can use the wild card again. To delete everything ending with .crownload I can use  <code class="highlighter-rouge">rm *.crdownload</code>. Now it pattern matches at the front.</p>
+<p>Now that that’s gone. How about those .crdownload files? To delete these we can use the wild card again. To delete everything ending with .crownload I can use  <code class="highlighter-rouge">rm *.crdownload</code>. Now it pattern matches at the front.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm *.crdownload
 Chriss-MacBook-Air:Downloads chris$ ls
@@ -334,8 +334,8 @@ Chriss-MacBook-Air:Downloads chris$
 </code></pre>
 </div>
 
-<p>Pass.kdbx is an important file so let’s move that into the home directory to save it for later.
-To move a file we use the command <code class="highlighter-rouge">mv</code>. mv takes to arguments the file to move and where it’s going. To move my pass.kdbx file back into my home directory I can write `mv pass.kdbx ../”</p>
+<p>Pass.kdbx is an important password file so let’s move that into the home directory to save it for later.
+To move a file we use the command <a href="https://linux.die.net/man/1/mv"><code class="highlighter-rouge">mv</code></a>. Mv takes two arguments the file to move and where it’s going. To move my pass.kdbx file back into my home directory I can write <code class="highlighter-rouge">mv pass.kdbx ../</code>. <code class="highlighter-rouge">../</code> is a shortcut to move the file into the directory above it.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ mv pass.kdbx ../
 Chriss-MacBook-Air:Downloads chris$ ls
@@ -369,7 +369,7 @@ Chriss-MacBook-Air:Downloads chris$
 </code></pre>
 </div>
 
-<p>Alex.pem and github-recover-codes.txt are also important files so let’s move the home for safe keeping.</p>
+<p>Alex.pem and github-recover-codes.txt are also important files so let’s move into my home for safe keeping.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ ls
 18620254_1987587898129254_5717056479093310776_n.jpg	Firefox.zip						
@@ -401,7 +401,7 @@ Chriss-MacBook-Air:Downloads chris$
 </code></pre>
 </div>
 
-<p>Those .jpgs are wallpapers from the movie The Grand Budapest Hotel, which I highly recommend. I could use move those into the home directory but let’s move them into a wallpaper directory. To make a folder we can use the <code class="highlighter-rouge">mkdir</code> commmand. So let’s make a wallpaper direcorty in the home folder</p>
+<p>Those .jpgs are wallpapers from the movie <a href="https://www.youtube.com/watch?v=1Fg5iWmQjwk"><code class="highlighter-rouge">The Grand Budapest Hotel</code></a>, which I highly recommend. I could just move those into the home directory, but let’s move them into a wallpaper directory. To make a directory we can use the <a href="https://linux.die.net/man/1/mkdir"><code class="highlighter-rouge">mkdir</code></a> command. So let’s make a wallpaper directory in the home folder.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ mkdir ../wallpapers
 Chriss-MacBook-Air:Downloads chris$ mv *.jpg ../wallpapers/
@@ -432,7 +432,7 @@ Chriss-MacBook-Air:Downloads chris$
 </code></pre>
 </div>
 
-<p>I don’t need anymore of the stuff in my downloads so let’s nuke it. Rm * will delete everything in a directoy.</p>
+<p>I don’t need anymore of this stuff in my downloads, so let’s nuke it. <code class="highlighter-rouge">Rm -rf *</code> will delete everything in a directory. The <code class="highlighter-rouge">-rf</code> just means to also delete the directories in the directories where deleting things.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm -rf *
 Chriss-MacBook-Air:Downloads chris$ ls
@@ -440,15 +440,15 @@ Chriss-MacBook-Air:Downloads chris$
 </code></pre>
 </div>
 
-<p>Wow very clean.</p>
-
-<p>This has only covered a hand full of commands but I hope it was a stepping stone into the world of the command line. If you want a full list of commands on your system you can type <code class="highlighter-rouge">ls /usr/bin/</code>. There’s a lot of them but with <code class="highlighter-rouge">man</code> or google you can figure most of them out.</p>
+<p>This has only covered a hand full of commands, but I hope it was a stepping stone into the world of the command line. If you want a full list of commands on your system you can type <code class="highlighter-rouge">ls /usr/bin/</code>. There’s a lot of them, but with <code class="highlighter-rouge">man</code> or your friend Google you can figure most of them out.</p>
 
 
 
 </div>
 
 <div class="pagination">
+  
+    <a href="/2017-08-31/happy-haskelling" class="left arrow">&#8592;</a>
   
   
     <a href="/2017-08-06/intro-to-python" class="right arrow">&#8594;</a>
@@ -461,7 +461,7 @@ Chriss-MacBook-Air:Downloads chris$
 
     <footer>
       <span>
-        &copy; <time datetime="2017-08-26 15:55:26 -0500">2017</time> Chris Reuter && Vedant Pathak. 
+        &copy; <time datetime="2017-09-02 10:09:44 -0500">2017</time> Chris Reuter && Vedant Pathak. 
       </span>
     </footer>
   </body>

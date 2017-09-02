@@ -38,7 +38,7 @@ Functions can apply to more than just numbers. They are just mappings between tw
 | ![dog](http://cdn2-www.dogtime.com/assets/uploads/2011/01/file_23020_dachshund-dog-breed.jpg) | 8 |
 | ![dog](https://vetstreet.brightspotcdn.com/dims4/default/79f1bd2/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F83%2F9e8de0a7f411e0a0d50050568d634f%2Ffile%2FPembroke-Welsh-Corgi-3-645mk62711.jpg) | 10 |
 
-The trick of functional programming is that using functions, in the strict math sense, makes understanding code easy. Since it is all functions, you can be sure that every time you put the same thing into the function you'll get the same thing out. This is known as [referential transparency](https://wiki.haskell.org/Referential_transparency), and it makes understanding functional programs a breeze.
+The trick of functional programming is that by using functions, in the strict math sense, understanding code is easier. Since it is all functions, you can be sure that every time you put the same thing into the function you'll get the same thing out. This is known as [referential transparency](https://wiki.haskell.org/Referential_transparency), and it makes understanding functional programs a breeze.
 
 There is a stigma around FP [from now on functional programming will be known as fp, because I got tired of typing it out] that it is for ["pointy headed academics"](https://en.wikipedia.org/wiki/Simon_Peyton_Jones). Fp, however is easier to write and understand because of [referential transparency](https://wiki.haskell.org/Referential_transparency).
 

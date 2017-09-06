@@ -8,6 +8,7 @@ author: "Chris Reuter"
 
 Haskell is a functional programming language that allows you to write really precise, simple and easy to understand code. Functional programming is a style of programming that combines functions together in order to tell the computer what to do. What's a function? Wikipedia tells that a function is a relation where ["each input is related to exactly one output"](https://en.wikipedia.org/wiki/Function_(mathematics)). The following are some examples.
 
+# More Functions
 
 | X | Y |
 | --- | --- |

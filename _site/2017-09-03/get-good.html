@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+  img[alt=dog] { width: 200px; }
+  </style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105814596-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      How to get good at git &middot; Latin Computer Science Club
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+</head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/">
+          <h2 class="nav-title">Latin Computer Science Club</h2>
+        </a>
+        <ul>
+          <li><a href="http://localhost:4004/about">About</a></li>
+          <li><a href="/">Posts</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by&nbsp;</span>Chris Reuter
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2017-09-03 00:00:00 -0500">September 03, 2017</time>
+    
+  </div>
+
+  <h1 class="post-title">How to get good at git</h1>
+  <div class="post-line"></div>
+
+  <h1 id="whats-git">What’s git?</h1>
+
+<p><img src="https://imgs.xkcd.com/comics/git.png" alt="xkcd" /></p>
+
+<p><a href="https://git-scm.com/">Git</a> is a tool programmers use to keep track their files. It stores different versions of a file as it changes. It also to revert back to any version and work from there. Let’s say I was writing an essay using git. I could write a first draft on why empirically the corgi is the cutest dog. I then put it into a git checkpoint. But then I decide I want to pivot to the history of the <a href="https://en.wikipedia.org/wiki/Queen_Elizabeth%27s_corgis">Queen’s dogs</a>. I then I make another git checkpoint. Once I get tired of reading gems like <a href="https://en.wikipedia.org/wiki/Queen_Elizabeth%27s_corgis">“Royal Clock-winder, Leonard Hubbard, was bitten by Susan (the corgi) upon entering the nursery at the Royal Lodge, Windsor.”</a>. I decide at this point I liked my first essay better. I can then revert back to my first checkpoint and continue my argument about corgis. I can revert to any checkpoint at any point and continue this what “Graph theory tree model” means.</p>
+
+<h1 id="its-collaborative">It’s collaborative</h1>
+
+<p>You can use git to work on projects with <a href="https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267">others</a>. It’s like Google docs for developers. Git is used by most open source projects such as, <a href="https://github.com/tensorflow/tensorflow">tensorflow</a> a <a href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a> library, <a href="https://github.com/opencv/opencv">open CV</a> a computer <a href="https://www.quora.com/What-are-some-good-undergraduate-OpenCV-projects-What-are-some-practical-accessible-topics-in-real-time-computer-vision-Also-what-is-the-learning-curve-for-OpenCV-and-or-its-interfaces-with-Python-MATLAB">vision</a> library, and <a href="https://github.com/atom/atom">atom</a> a text editor.</p>
+
+<h1 id="getting-started">Getting started</h1>
+<p><a href="https://github.com/">Github</a> is a website that offers free git services. Github run’s a git server with which you can use to work on your projects. However, you don’t have to use github to use git you can run your <a href="https://git-scm.com/book/en/v1/Git-on-the-Server">own git server</a>. I’ll walk you through the process of using git. Sign up for a github account. Then hit the green new respitory button. Name the repository whatever you want. Git clone the repository in terminal.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Last login: Mon Sep 11 11:27:01 on ttys000
+Chriss-MacBook-Air:latin-cs-club chris$ git clone git@github.com:latin-cs-club/latin-cs-club.git
+Cloning into 'latin-cs-club'...
+remote: Counting objects: 193, done.
+remote: Compressing objects: 100% (10/10), done. 
+remote: Total 193 (delta 0), reused 6 (delta 0), pack-reused 179
+Receiving objects: 100% (193/193), 93.63 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (81/81), done.
+Chriss-MacBook-Air:latin-cs-club chris$ 
+</code></pre>
+</div>
+
+<p>Now change something. This command creates a file called README.md.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "Hello" &gt; README.md
+</code></pre>
+</div>
+
+<p>Type git status.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+   (use "git add &lt;file&gt;..." to include in what will be committed)
+
+README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+Chriss-MacBook-Air:ASAR chris$ 
+</code></pre>
+</div>
+
+<p>It’s pretty self explantory to add the README.md to the repo type.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git add README.md 
+</code></pre>
+</div>
+
+<p>You can now see that it has been added.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+
+new file:   README.md
+
+Chriss-MacBook-Air:ASAR chris$ 
+</code></pre>
+</div>
+
+<p>Now to create a checkpoint you need to commit it.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git commit -m "first edit"
+[master (root-commit) 2ece2ee] first edit
+ 1 file changed, 1 insertion(+)
+create mode 100644 README.md
+Chriss-MacBook-Air:ASAR chris$ 
+</code></pre>
+</div>
+
+<p>You can put anything you want between the quotes. It’s good to make it describive so when you go back you know what has changed.
+To sync it with github you need to push it.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git push
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 217 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:Chrisr850/ASAR.git
+ * [new branch]      master -&gt; master
+Chriss-MacBook-Air:ASAR chris$ 
+</code></pre>
+</div>
+
+<p>Now your repo is synced with github, and will be able to see it on github. The basic workflow is to check what’s changed with <code class="highlighter-rouge">git status</code> then add the filer with <code class="highlighter-rouge">git add &lt;file&gt;</code> and then commit it with <code class="highlighter-rouge">git commit -m "message"</code> then push it with <code class="highlighter-rouge">git push</code>. Git has <a href="https://git-scm.com/docs">many</a> commands and features, in fact we even use git to host this site, but for normal day to day use you only need to use know these four commands.</p>
+
+
+</div>
+
+<div class="pagination">
+  
+  
+    <a href="http://localhost:4004/2017-08-31/happy-haskelling" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2017-09-11 20:24:55 -0500">2017</time> Chris Reuter && Vedant Pathak. 
+      </span>
+    </footer>
+  </body>
+</html>

@@ -58,16 +58,17 @@
 
   <h1 id="whats-git">What’s git?</h1>
 
-<p><img src="https://imgs.xkcd.com/comics/git.png" alt="xkcd" /></p>
+<p><img src="https://imgs.xkcd.com/comics/git.png" alt="xkcd" />
+<a href="https://git-scm.com/">Git</a> is a tool programmers use to keep track of their files. It stores different versions of a file in a series of checkpoints, which allows you to revert back to any checkpoint and work on your files from there. Let’s say I am storing an essay I’m working on in git. When I write the first draft of my essay on why empirically the Corgi is the cutest dog, I put it into a git checkpoint. I then decide I want to write about the history of the <a href="https://en.wikipedia.org/wiki/Queen_Elizabeth%27s_corgis">Queen’s dogs</a>, so I rework the essay from this angle and save it an another checkpoint. Once I get tired of reading about the antics of the royal family,<a href="https://en.wikipedia.org/wiki/Queen_Elizabeth%27s_corgis">“Royal Clock-winder, Leonard Hubbard, was bitten by Susan (the Corgi) upon entering the nursery at the Royal Lodge, Windsor”</a>, I decide that I liked my first essay better. With git, I can revert back to my first checkpoint and continue my master thesis on Corgis. If I decide to, I can save my work in a checkpoint and go back to work on the history of the queen’s dog. This is what “Graph theory tree model” means. You can branch off of any checkpoint you want. Below is a graphic to help you visualize this branching.</p>
 
-<p><a href="https://git-scm.com/">Git</a> is a tool programmers use to keep track their files. It stores different versions of a file as it changes. It also to revert back to any version and work from there. Let’s say I was writing an essay using git. I could write a first draft on why empirically the corgi is the cutest dog. I then put it into a git checkpoint. But then I decide I want to pivot to the history of the <a href="https://en.wikipedia.org/wiki/Queen_Elizabeth%27s_corgis">Queen’s dogs</a>. I then I make another git checkpoint. Once I get tired of reading gems like <a href="https://en.wikipedia.org/wiki/Queen_Elizabeth%27s_corgis">“Royal Clock-winder, Leonard Hubbard, was bitten by Susan (the corgi) upon entering the nursery at the Royal Lodge, Windsor.”</a>. I decide at this point I liked my first essay better. I can then revert back to my first checkpoint and continue my argument about corgis. I can revert to any checkpoint at any point and continue this what “Graph theory tree model” means.</p>
+<p><img src="https://alexshuhin.github.io/git-init/images/git-tree.png" alt="graphic" /></p>
 
 <h1 id="its-collaborative">It’s collaborative</h1>
 
-<p>You can use git to work on projects with <a href="https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267">others</a>. It’s like Google docs for developers. Git is used by most open source projects such as, <a href="https://github.com/tensorflow/tensorflow">tensorflow</a> a <a href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a> library, <a href="https://github.com/opencv/opencv">open CV</a> a computer <a href="https://www.quora.com/What-are-some-good-undergraduate-OpenCV-projects-What-are-some-practical-accessible-topics-in-real-time-computer-vision-Also-what-is-the-learning-curve-for-OpenCV-and-or-its-interfaces-with-Python-MATLAB">vision</a> library, and <a href="https://github.com/atom/atom">atom</a> a text editor.</p>
+<p>You can use git to work on projects with <a href="https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267">others</a>. It’s like Google Doc for developers. Git is used by most open source projects such as, <a href="https://github.com/tensorflow/tensorflow">tensorflow</a> a <a href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a> library, <a href="https://github.com/opencv/opencv">open CV</a> a computer <a href="https://www.quora.com/What-are-some-good-undergraduate-OpenCV-projects-What-are-some-practical-accessible-topics-in-real-time-computer-vision-Also-what-is-the-learning-curve-for-OpenCV-and-or-its-interfaces-with-Python-MATLAB">vision</a> library, and <a href="https://github.com/atom/atom">atom</a> a text editor.</p>
 
 <h1 id="getting-started">Getting started</h1>
-<p><a href="https://github.com/">Github</a> is a website that offers free git services. Github run’s a git server with which you can use to work on your projects. However, you don’t have to use github to use git you can run your <a href="https://git-scm.com/book/en/v1/Git-on-the-Server">own git server</a>. I’ll walk you through the process of using git. Sign up for a github account. Then hit the green new respitory button. Name the repository whatever you want. Git clone the repository in terminal.</p>
+<p><a href="https://github.com/">Github</a> is a website that offers free git services. Github runs a git server which you can use to work on your projects. However, you don’t have to use github to use git you can run your <a href="https://git-scm.com/book/en/v1/Git-on-the-Server">own git server</a>. I’ll walk you through using git with github. Sign up for a github account. Then hit the green new repository button. Name the repository whatever you want. Git clone the repository in terminal. If you haven’t already you’ll need to install <a href="https://git-scm.com/downloads">git</a>.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Last login: Mon Sep 11 11:27:01 on ttys000
 Chriss-MacBook-Air:latin-cs-club chris$ git clone git@github.com:latin-cs-club/latin-cs-club.git
@@ -81,13 +82,13 @@ Chriss-MacBook-Air:latin-cs-club chris$
 </code></pre>
 </div>
 
-<p>Now change something. This command creates a file called README.md.</p>
+<p>Now change something in this repo (Note that you’ll have to change directory into the github repo, see <a href="http://latincsclub.com/2017-08-19/commmand-line">here</a> for more info). This command creates a file called README.md.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>echo "Hello" &gt; README.md
 </code></pre>
 </div>
 
-<p>Type git status.</p>
+<p>To see what has changed type <code class="highlighter-rouge">git status</code>.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git status
 On branch master
@@ -104,7 +105,7 @@ Chriss-MacBook-Air:ASAR chris$
 </code></pre>
 </div>
 
-<p>It’s pretty self explantory to add the README.md to the repo type.</p>
+<p>It’s pretty verbose, to add README.md to the repo type.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git add README.md 
 </code></pre>
@@ -126,7 +127,7 @@ Chriss-MacBook-Air:ASAR chris$
 </code></pre>
 </div>
 
-<p>Now to create a checkpoint you need to commit it.</p>
+<p>To create a checkpoint you need to commit it. Every checkpoint has a message attached to it.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git commit -m "first edit"
 [master (root-commit) 2ece2ee] first edit
@@ -136,8 +137,8 @@ Chriss-MacBook-Air:ASAR chris$
 </code></pre>
 </div>
 
-<p>You can put anything you want between the quotes. It’s good to make it describive so when you go back you know what has changed.
-To sync it with github you need to push it.</p>
+<p>You should put your message in between the quotes. It’s good to make it descriptive, so when you go back you know what has changed.
+To sync it with github, you need to push it.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git push
 Counting objects: 3, done.
@@ -149,7 +150,7 @@ Chriss-MacBook-Air:ASAR chris$
 </code></pre>
 </div>
 
-<p>Now your repo is synced with github, and will be able to see it on github. The basic workflow is to check what’s changed with <code class="highlighter-rouge">git status</code> then add the filer with <code class="highlighter-rouge">git add &lt;file&gt;</code> and then commit it with <code class="highlighter-rouge">git commit -m "message"</code> then push it with <code class="highlighter-rouge">git push</code>. Git has <a href="https://git-scm.com/docs">many</a> commands and features, in fact we even use git to host this site, but for normal day to day use you only need to use know these four commands.</p>
+<p>Now your repo is synced with github, and will be able to see it on github. The basic work-flow is to check what’s changed with <code class="highlighter-rouge">git status</code> then add the file with <code class="highlighter-rouge">git add &lt;file&gt;</code> and then commit it with <code class="highlighter-rouge">git commit -m "message"</code> and then push it with <code class="highlighter-rouge">git push</code>. Git has <a href="https://git-scm.com/docs">many</a> commands and features, in fact we even use git to host this site, but for normal day to day use you only need to use know these four commands. Git can be a really useful tool to know how to use because it let’s you play around with your files without ever losing everything. I also recommend <a href="https://help.github.com/articles/connecting-to-github-with-ssh/">enabling ssh</a> for git so that you don’t need to type your username and password every time you push.</p>
 
 
 </div>
@@ -167,7 +168,7 @@ Chriss-MacBook-Air:ASAR chris$
 
     <footer>
       <span>
-        &copy; <time datetime="2017-09-11 20:24:55 -0500">2017</time> Chris Reuter && Vedant Pathak. 
+        &copy; <time datetime="2017-09-11 21:30:02 -0500">2017</time> Chris Reuter && Vedant Pathak. 
       </span>
     </footer>
   </body>

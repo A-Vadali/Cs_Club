@@ -19,7 +19,7 @@
 
   <title>
     
-      Energetic Editing with Emacs &middot; Latin Computer Science Club
+      Efficient Editing with Emacs &middot; Latin Computer Science Club
     
   </title>
 
@@ -53,21 +53,21 @@
     
   </div>
 
-  <h1 class="post-title">Energetic Editing with Emacs</h1>
+  <h1 class="post-title">Efficient Editing with Emacs</h1>
   <div class="post-line"></div>
 
   <h2 id="your-choice-of-editor">Your choice of editor</h2>
 
-<p>A developer’s choice of editor is a personal decision. Choosing an editor is like choosing a fashion style, it’s liable to change in the future. People in the developer community can be <a href="https://en.wikipedia.org/wiki/Editor_war">opiniated</a> about your choice of editor, but in the end of the day use what makes sense to you. I use emacs because it works well for me. But it may not work as well for you and thats fine.</p>
+<p>A developer’s choice of editor is a personal decision. Choosing an editor is like choosing a style of fashion, it’s liable to change in the future. People in the developer community can be <a href="https://en.wikipedia.org/wiki/Editor_war">opiniated</a> about your choice of editor, but at the end of the day use what makes sense to you. I use emacs because it works well for me. But it may not work as well for you and that’s fine.</p>
 
 <h2 id="emacs-history">Emacs history</h2>
 
-<p>GNU Emacs was first developed by <a href="https://stallman.org/">Richard Stallman</a>. Stallman has a <a href="https://www.youtube.com/watch?v=qIF5xnkcncI">cult</a> like following in the open source community. The Emacs family of editors has been <a href="https://www.jwz.org/doc/emacs-timeline.html">around</a> for a <a href="https://www.emacswiki.org/emacs/EmacsHistory">while</a>. Emacs is an program that executes emacs lisp, this has led to the joke that Emacs is <a href="http://wiki.c2.com/?EmacsAsOperatingSystem">great operating system</a> that is lacking an editor. With Emacs you can check your calendar, browse the web, write emails and even edit text. The reason for all this functionaliyt is that Emacs is written in lisp and <a href="https://www.gnu.org/software/emacs/manual/html_mono/eintr.html">you can easily extend it using that lisp</a>.</p>
+<p>GNU Emacs was first developed by <a href="https://stallman.org/">Richard Stallman</a>. Stallman has a <a href="https://www.youtube.com/watch?v=qIF5xnkcncI">cult</a> like following in the open source community. The Emacs family of editors has been <a href="https://www.jwz.org/doc/emacs-timeline.html">around</a> for a <a href="https://www.emacswiki.org/emacs/EmacsHistory">while</a>. Emacs is a program that executes emacs lisp, this has led to the joke that Emacs is <a href="http://wiki.c2.com/?EmacsAsOperatingSystem">great operating system</a> that is lacking an editor. With Emacs, you can check your calendar, browse the web, write emails and even edit text. The reason for all this functionality is that Emacs is written in lisp and <a href="https://www.gnu.org/software/emacs/manual/html_mono/eintr.html">you can easily extend it using that lisp</a>.</p>
 
 <h2 id="getting-started">Getting Started</h2>
 
-<p><img src="https://www.gnu.org/software/emacs/tour/images/splash.png" alt="emacs" />
-Out of the box Emacs won’t look very pretty.  You can download a copy from <a href="https://www.gnu.org/software/emacs/">GNU</a>. The first thing I like to do is to disable the menu, tool and scroll bars. You can do this by opening a file called .emacs. Press C-x C-f, C means control, so you would hit Control x and then Control f, you should see a menu bar at the bottom type .emacs into it and hit enter. A new buffer should appear that is empty. Copy and paste the following lines into the file.</p>
+<p><img src="http://latincsclub.com/assets/editors/emacs0.png" alt="emacs" />
+Out of the box, Emacs won’t look very pretty.  You can download a copy from <a href="https://www.gnu.org/software/emacs/">GNU</a>. The first thing I like to do is to disable the menu, tool and scroll bars. You can do this by opening a file called .emacs. Press C-x C-f, C means to press control, so you would hit Control x and then Control f, you should see a menu bar at the bottom type .emacs into it and hit enter. A new buffer should appear that is empty. Copy and paste the following lines into the file.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>(menu-bar-mode -1) 
 (toggle-scroll-bar -1) 
@@ -75,7 +75,11 @@ Out of the box Emacs won’t look very pretty.  You can download a copy from <a 
 </code></pre>
 </div>
 
-<p>Then press C-x C-s to save it. Now close emacs and reopen it you’ll notice that emacs is now more streamlined. Now to install a theme you’ll need to install melpa. Melpa is package manager that let’s you install lots of different emacs packages. Insert this into your .emacs.</p>
+<p>Then press C-x C-s to save it. Now close emacs and reopen it you’ll notice that emacs is now more streamlined.</p>
+
+<p><img src="http://latincsclub.com/assets/editors/emacs1.png" alt="emacs" /></p>
+
+<p>Now to install a theme you’ll need to install melpa. Melpa is package manager that lets you install lots of different emacs packages. Insert this into your .emacs.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>(require 'package)
 (setq package-enable-at-startup nil)
@@ -83,14 +87,24 @@ Out of the box Emacs won’t look very pretty.  You can download a copy from <a 
      '("melpa" . "https://melpa.org/packages/"))
 
 (package-initialize)
+
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+(package-refresh-contents)
+(package-install 'use-package))
+
+(use-package cyberpunk-theme
+ :ensure t)
 </code></pre>
 </div>
 
-<h2 id="navigating-text">Navigating text</h2>
+<p>Now open and close Emacs. You should now see.</p>
 
-<p>The basics you need to use is alt-x. Let’s you exec command. Cmd-x Cmd-f to open
-a file. Save is Cmd-x Cmd-s. This means press command and x and then command and
-s. Be sure to save early and often.</p>
+<p><img src="http://latincsclub.com/assets/editors/emacs2.png" alt="emacs" /></p>
+
+<p>We’ve now installed the cyberpunk theme. If you want to load another theme just change cyberpunk-theme with another theme. <a href="https://emacsthemes.com/">Here’s</a> a list of things.</p>
+
+<h1 id="this-article-is-still-a-work-in-progress">This article is still a work in progress</h1>
 
 
 </div>
@@ -108,7 +122,7 @@ s. Be sure to save early and often.</p>
 
     <footer>
       <span>
-        &copy; <time datetime="2017-10-22 11:20:46 -0500">2017</time> Chris Reuter && Vedant Pathak. 
+        &copy; <time datetime="2017-10-22 15:50:37 -0500">2017</time> Chris Reuter && Vedant Pathak. 
       </span>
     </footer>
   </body>

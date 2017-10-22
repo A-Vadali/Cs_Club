@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+  img[alt=dog] { width: 200px; }
+  </style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105814596-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Energetic Editing with Emacs &middot; Latin Computer Science Club
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+</head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/">
+          <h2 class="nav-title">Latin Computer Science Club</h2>
+        </a>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/">Posts</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by&nbsp;</span>Chris Reuter
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2017-10-20 00:00:00 -0500">October 20, 2017</time>
+    
+  </div>
+
+  <h1 class="post-title">Energetic Editing with Emacs</h1>
+  <div class="post-line"></div>
+
+  <h2 id="your-choice-of-editor">Your choice of editor</h2>
+
+<p>A developer’s choice of editor is a personal decision. Choosing an editor is like choosing a fashion style, it’s liable to change in the future. People in the developer community can be <a href="https://en.wikipedia.org/wiki/Editor_war">opiniated</a> about your choice of editor, but in the end of the day use what makes sense to you. I use emacs because it works well for me. But it may not work as well for you and thats fine.</p>
+
+<h2 id="emacs-history">Emacs history</h2>
+
+<p>GNU Emacs was first developed by <a href="https://stallman.org/">Richard Stallman</a>. Stallman has a <a href="https://www.youtube.com/watch?v=qIF5xnkcncI">cult</a> like following in the open source community. The Emacs family of editors has been <a href="https://www.jwz.org/doc/emacs-timeline.html">around</a> for a <a href="https://www.emacswiki.org/emacs/EmacsHistory">while</a>. Emacs is an program that executes emacs lisp, this has led to the joke that Emacs is <a href="http://wiki.c2.com/?EmacsAsOperatingSystem">great operating system</a> that is lacking an editor. With Emacs you can check your calendar, browse the web, write emails and even edit text. The reason for all this functionaliyt is that Emacs is written in lisp and <a href="https://www.gnu.org/software/emacs/manual/html_mono/eintr.html">you can easily extend it using that lisp</a>.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p><img src="https://www.gnu.org/software/emacs/tour/images/splash.png" alt="emacs" />
+Out of the box Emacs won’t look very pretty.  You can download a copy from <a href="https://www.gnu.org/software/emacs/">GNU</a>. The first thing I like to do is to disable the menu, tool and scroll bars. You can do this by opening a file called .emacs. Press C-x C-f, C means control, so you would hit Control x and then Control f, you should see a menu bar at the bottom type .emacs into it and hit enter. A new buffer should appear that is empty. Copy and paste the following lines into the file.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(menu-bar-mode -1) 
+(toggle-scroll-bar -1) 
+(tool-bar-mode -1) 
+</code></pre>
+</div>
+
+<p>Then press C-x C-s to save it. Now close emacs and reopen it you’ll notice that emacs is now more streamlined. Now to install a theme you’ll need to install melpa. Melpa is package manager that let’s you install lots of different emacs packages. Insert this into your .emacs.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+     '("melpa" . "https://melpa.org/packages/"))
+
+(package-initialize)
+</code></pre>
+</div>
+
+<h2 id="navigating-text">Navigating text</h2>
+
+<p>The basics you need to use is alt-x. Let’s you exec command. Cmd-x Cmd-f to open
+a file. Save is Cmd-x Cmd-s. This means press command and x and then command and
+s. Be sure to save early and often.</p>
+
+
+</div>
+
+<div class="pagination">
+  
+  
+    <a href="/2017-09-03/get-good" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2017-10-22 11:20:46 -0500">2017</time> Chris Reuter && Vedant Pathak. 
+      </span>
+    </footer>
+  </body>
+</html>

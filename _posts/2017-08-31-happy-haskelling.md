@@ -18,7 +18,7 @@ Haskell is a functional programming language that allows you to write really pre
 | 4 | 3 |
 | 1 | 2 |
 
-Each input maps to one output. Note having the same output from the different outputs is allowed.
+Each input maps to one output. Having the same output from the different inputs is allowed.
 
 | First Name | Last Name |
 | --- | --- |
@@ -30,7 +30,7 @@ Each input maps to one output. Note having the same output from the different ou
 | Robin | Milner |
 
 
-Functions can apply to more than just numbers. They are just mappings between two groups with the special constraint of one member of one group can't map to two members of the second group.
+Functions can apply to more than just numbers. They are just mappings between two groups with the special constraint that one member of one group can't map to two members of the second group.
 
 | Dog pictures | Cuteness from 1-10 |
 | --- | --- |
@@ -39,11 +39,11 @@ Functions can apply to more than just numbers. They are just mappings between tw
 | ![dog](http://cdn2-www.dogtime.com/assets/uploads/2011/01/file_23020_dachshund-dog-breed.jpg) | 8 |
 | ![dog](https://vetstreet.brightspotcdn.com/dims4/default/79f1bd2/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F83%2F9e8de0a7f411e0a0d50050568d634f%2Ffile%2FPembroke-Welsh-Corgi-3-645mk62711.jpg) | 10 |
 
-The trick of functional programming is that by using functions, in the strict math sense, understanding code is easier. Since it is all functions, you can be sure that every time you put the same thing into the function you'll get the same thing out. This is known as [referential transparency](https://wiki.haskell.org/Referential_transparency), and it makes understanding functional programs a breeze.
+The trick of functional programming is that by using functions, in the strict mathy sense your code will be easier to understand. Since it's all functions, you can be sure that every time you put the same thing into the function you'll get the same thing out. This is known as [referential transparency](https://wiki.haskell.org/Referential_transparency), and it makes understanding functional programs a breeze.
 
-There is a stigma around FP [from now on functional programming will be known as fp, because I got tired of typing it out] that it is for ["pointy headed academics"](https://en.wikipedia.org/wiki/Simon_Peyton_Jones). Fp, however is easier to write and understand because of [referential transparency](https://wiki.haskell.org/Referential_transparency).
+There is a stigma around FP [from now on functional programming will be known as fp, because I got tired of typing it out] that it is for ["pointy headed academics"](https://en.wikipedia.org/wiki/Simon_Peyton_Jones). Fp, however is easier to write and understand because of this property of [referential transparency](https://wiki.haskell.org/Referential_transparency).
 
-However FP has a significantly steeper learning curve than other languages like python.
+However FP has a significantly steeper learning curve than other languages like python. It takes longer to get functional in functional programming.
 
 ![curve](http://i.imgur.com/TTBBeJs.jpg)
 

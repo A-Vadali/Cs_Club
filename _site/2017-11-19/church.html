@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+  img[alt=dog] { width: 200px; }
+  </style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105814596-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Cracking Church encoding &middot; Latin Computer Science Club
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+</head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/">
+          <h2 class="nav-title">Latin Computer Science Club</h2>
+        </a>
+        <ul>
+          <li><a href="http://localhost:40002/about">About</a></li>
+          <li><a href="/">Posts</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by&nbsp;</span>Chris Reuter"
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2017-11-19 00:00:00 -0600">November 19, 2017</time>
+    
+  </div>
+
+  <h1 class="post-title">Cracking Church encoding</h1>
+  <div class="post-line"></div>
+
+  <h1 id="this-article-is-a-work-in-progress">This article is a work in progress</h1>
+
+<h1 id="alonzo-church-and-alan-turing">Alonzo Church and Alan Turing</h1>
+
+<p>Alonzo Church was a famous mathematician. He worked with Alan Turing on the Entscheidungsproblem. The Entscheidungsproblem is the idea of whether a program will halt or not. Turing developed his famous turing machines to help solve this problem. Turing machines are computers that operate on an infinite tape of ones and zeros. Turing Machines were necessary because it allowed Turing to express computation in a mathematical sense. Church developed another way of expressing computation called lambda calculus.</p>
+
+<h1 id="lambda-calculus">Lambda Calculus</h1>
+
+<p>Lamba expressions are way to represent functions.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.x
+
+f(x) = x
+</code></pre>
+</div>
+
+<p>The two expressions above are equivelant. They both return there input. This what’s called an identity function. To evaluate a lamba expression you replace the variable with what is being evaluated for.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.x
+1 (λx.x)
+1
+</code></pre>
+</div>
+
+<p>Here 1 replaces x.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.λy.y
+</code></pre>
+</div>
+
+<p>The above function has two inputs.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.λy.y
+
+1 2 (λx.λy.y)
+1 (λy.y)
+1
+
+3 4 (λx.λy.y)
+3 (λy.y)
+3
+</code></pre>
+</div>
+
+<p>As you can see this function drops it’s first argument.</p>
+
+
+</div>
+
+<div class="pagination">
+  
+  
+    <a href="http://localhost:40002/2017-10-20/editors" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2017-11-19 19:09:46 -0600">2017</time> Chris Reuter && Vedant Pathak. 
+      </span>
+    </footer>
+  </body>
+</html>

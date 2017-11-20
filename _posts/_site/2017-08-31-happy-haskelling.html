@@ -1,62 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <style>
-  img[alt=dog] { width: 200px; }
-  </style>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-105814596-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>
-    
-      Happy Haskelling &middot; Latin Computer Science Club
-    
-  </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-</head>
-
-
-  <body>
-    <nav class="nav">
-      <div class="nav-container">
-        <a href="/">
-          <h2 class="nav-title">Latin Computer Science Club</h2>
-        </a>
-        <ul>
-          <li><a href="http://localhost:40002/about">About</a></li>
-          <li><a href="/">Posts</a></li>
-        </ul>
-    </div>
-  </nav>
-
-    <main>
-      <div class="post">
-  <div class="post-info">
-    <span>Written by&nbsp;</span>Chris Reuter
-
-    
-      <br>
-      <span>on&nbsp;</span><time datetime="2017-08-31 00:00:00 -0500">August 31, 2017</time>
-    
-  </div>
-
-  <h1 class="post-title">Happy Haskelling</h1>
-  <div class="post-line"></div>
-
-  <h1 id="whats-haskell">What’s Haskell?</h1>
+<h1 id="whats-haskell">What’s Haskell?</h1>
 
 <p>Haskell is a functional programming language that allows you to write really precise, simple and easy to understand code. Functional programming is a style of programming that combines functions together in order to tell the computer what to do. What’s a function? Wikipedia tells that a function is a relation where <a href="https://en.wikipedia.org/wiki/Function_(mathematics)">“each input is related to exactly one output”</a>. The following are some examples.</p>
 
@@ -93,7 +35,7 @@
   </tbody>
 </table>
 
-<p>Each input maps to one output. Note having the same output from the different outputs is allowed.</p>
+<p>Each input maps to one output. Having the same output from the different inputs is allowed.</p>
 
 <table>
   <thead>
@@ -130,7 +72,7 @@
   </tbody>
 </table>
 
-<p>Functions can apply to more than just numbers. They are just mappings between two groups with the special constraint of one member of one group can’t map to two members of the second group.</p>
+<p>Functions can apply to more than just numbers. They are just mappings between two groups with the special constraint that one member of one group can’t map to two members of the second group.</p>
 
 <table>
   <thead>
@@ -159,11 +101,11 @@
   </tbody>
 </table>
 
-<p>The trick of functional programming is that by using functions, in the strict math sense, understanding code is easier. Since it is all functions, you can be sure that every time you put the same thing into the function you’ll get the same thing out. This is known as <a href="https://wiki.haskell.org/Referential_transparency">referential transparency</a>, and it makes understanding functional programs a breeze.</p>
+<p>The trick of functional programming is that by using functions, in the strict mathy sense your code will be easier to understand. Since it’s all functions, you can be sure that every time you put the same thing into the function you’ll get the same thing out. This is known as <a href="https://wiki.haskell.org/Referential_transparency">referential transparency</a>, and it makes understanding functional programs a breeze.</p>
 
-<p>There is a stigma around FP [from now on functional programming will be known as fp, because I got tired of typing it out] that it is for <a href="https://en.wikipedia.org/wiki/Simon_Peyton_Jones">“pointy headed academics”</a>. Fp, however is easier to write and understand because of <a href="https://wiki.haskell.org/Referential_transparency">referential transparency</a>.</p>
+<p>There is a stigma around FP [from now on functional programming will be known as fp, because I got tired of typing it out] that it is for <a href="https://en.wikipedia.org/wiki/Simon_Peyton_Jones">“pointy headed academics”</a>. Fp, however is easier to write and understand because of this property of <a href="https://wiki.haskell.org/Referential_transparency">referential transparency</a>.</p>
 
-<p>However FP has a significantly steeper learning curve than other languages like python.</p>
+<p>However FP has a significantly steeper learning curve than other languages like python. It takes longer to get functional in functional programming.</p>
 
 <p><img src="http://i.imgur.com/TTBBeJs.jpg" alt="curve" /></p>
 
@@ -173,27 +115,3 @@
 
 <p>If you want to take the proverbial red pill you should read my follow up blog posts.</p>
 
-
-
-</div>
-
-<div class="pagination">
-  
-    <a href="http://localhost:40002/2017-09-03/get-good" class="left arrow">&#8592;</a>
-  
-  
-    <a href="http://localhost:40002/2017-08-31/happy-haskelling" class="right arrow">&#8594;</a>
-  
-
-  <a href="#" class="top">Top</a>
-</div>
-
-    </main>
-
-    <footer>
-      <span>
-        &copy; <time datetime="2017-11-19 18:56:32 -0600">2017</time> Chris Reuter && Vedant Pathak. 
-      </span>
-    </footer>
-  </body>
-</html>

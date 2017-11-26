@@ -70,7 +70,7 @@ f(x) = x
 </code></pre>
 </div>
 
-<p>The two expressions above are equivalent. They both return their input. This what’s called an identity function. To evaluate a lambda expression you replace the variable with what is being evaluated for.</p>
+<p>The two expressions above are equivalent. They both return their input. This is what’s called an identity function. To evaluate a lambda expression you replace the variable with what it is being evaluated for.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>λx.x
 ((λx.x) 1)
@@ -151,7 +151,7 @@ The C combinator swaps it second and third input.
 </code></pre>
 </div>
 
-<p>Church then went about doing operations on these representations of numbers. The first combinator he found was the successor function which given a church representation of a number returns the next church number.</p>
+<p>Church then went about doing operations on these representations of numbers. The first combinator he found was the successor function which takes a church representation of a number and returns the next church number.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>successor = λn.λf.λx.f (n f x)
 </code></pre>
@@ -206,7 +206,7 @@ f(f(f(x))) which equals three
 
     <footer>
       <span>
-        &copy; <time datetime="2017-11-24 09:36:51 -0600">2017</time> Chris Reuter && Vedant Pathak. 
+        &copy; <time datetime="2017-11-25 18:13:34 -0600">2017</time> Chris Reuter && Vedant Pathak. 
       </span>
     </footer>
   </body>

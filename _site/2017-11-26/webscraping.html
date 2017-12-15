@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+  img[alt=dog] { width: 200px; }
+  </style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105814596-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Webscraping with Haskell &middot; Latin Computer Science Club
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+</head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/">
+          <h2 class="nav-title">Latin Computer Science Club</h2>
+        </a>
+        <ul>
+          <li><a href="http://localhost:5002/about">About</a></li>
+          <li><a href="/">Posts</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by&nbsp;</span>Chris Reuter
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2017-11-26 00:00:00 -0600">November 26, 2017</time>
+    
+  </div>
+
+  <h1 class="post-title">Webscraping with Haskell</h1>
+  <div class="post-line"></div>
+
+  <h1 id="haskell-web-scrapping">Haskell web scrapping</h1>
+
+<p>I webscraping with Haskell is surprisingly easy using the <a href="https://hackage.haskell.org/package/webdriver">selenium webdriver</a>. I used it to scrape home work from my school site. To launch a browser session use</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>run Session defaultConfig :: WD a -&gt; IO a
+</code></pre>
+</div>
+
+<p>To run these you will need to install <a href="https://sites.google.com/a/chromium.org/chromedriver/">chromedriver</a> as well as having a running <a href="http://docs.seleniumhq.org/download/">selenium stand alone server</a>. Here’s how to open a web page.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>runSession ( useBrowser chrome defaultConfig) $ openPage "www.google.com"
+</code></pre>
+</div>
+
+<p>To login you can use waitUntil and sendKeys.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>openPage "https://latinschool.myschoolapp.com/app#login"
+sendKeys "creuter"  =&lt;&lt; (waitUntil 20 $ findElem (ById "Username"))
+sendKeys "myPassword"  =&lt;&lt;(waitUntil 20 $ findElem (ById "Password"))
+(waitUntil 20 $ findElem (ById "loginBtn")) &gt;&gt;= click
+</code></pre>
+</div>
+
+<p>The ById command tells selenium to find an element by it’s id. The waitUntil is necessary because sometimes it takes longer for a web page to load. The =« pipes an element into sendkeys. It could be rewritten as.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>usernameLogin &lt;- (waitUntil 20 $ findElem (ById "Username")
+sendKeys "creuter" usernameLogin
+passwordTextBox &lt;- (waitUntil 20 $ findElem (ById "Password"))
+sendKeys "myPassword" passwordTextBox
+clickButton &lt;- (waitUntil 20 $ findElem (ById "loginBtn"))
+click clickButton
+liftIO $ threadDelay 8000000
+</code></pre>
+</div>
+
+<p>Once you’ve logged and a session is set. You can log in somewhere else.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>openPage "https://latinschool.myschoolapp.com/app/student#studentmyday/assignment-center"
+liftIO $ threadDelay 8000000
+</code></pre>
+</div>
+
+<p>You can then scrape homework through findElems.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>assigmentTable &lt;- waitUntil 20 $ findElems (ById "assignment-center-assignment-items")  -- locate assigment table
+cells &lt;- findElemsFrom (assigmentTable !! 0) (ByXPath "tr") 
+mocells &lt;- mapM (\x -&gt; findElemsFrom x (ByXPath "td")) cells
+mapM (\row -&gt; mapM (getText) row) mocells -- returns text of homework table
+</code></pre>
+</div>
+
+<p>Example usage.</p>
+
+<p><a href="https://asciinema.org/a/gXSECM7LwipXgA7hgEx1WB11m"><img src="https://asciinema.org/a/gXSECM7LwipXgA7hgEx1WB11m.png" alt="asciicast" /></a></p>
+
+
+</div>
+
+<div class="pagination">
+  
+  
+    <a href="http://localhost:5002/2017-11-19/church" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2017-11-26 18:00:05 -0600">2017</time> Chris Reuter && Vedant Pathak. 
+      </span>
+    </footer>
+  </body>
+</html>

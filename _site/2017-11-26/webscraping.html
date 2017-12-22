@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+  img[alt=dog] { width: 200px; }
+  </style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105814596-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Webscraping with Haskell &middot; Latin Computer Science Club
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+</head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/">
+          <h2 class="nav-title">Latin Computer Science Club</h2>
+        </a>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/">Posts</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by&nbsp;</span>Chris Reuter
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2017-11-26 00:00:00 +0000">November 26, 2017</time>
+    
+  </div>
+
+  <h1 class="post-title">Webscraping with Haskell</h1>
+  <div class="post-line"></div>
+
+  <h1 id="haskell-web-scrapping">Haskell web scrapping</h1>
+
+<p>Webscraping with Haskell is surprisingly easy using <a href="https://hackage.haskell.org/package/webdriver">selenium</a>. I have been using Haskell to scrape homework assigments from my school’s web assigment center. You will need to install the <a href="https://hackage.haskell.org/package/webdriver">webdriver</a> package from <a href="https://www.haskell.org/cabal/">cabal</a>. The haskell webdriver package requires  <a href="https://sites.google.com/a/chromium.org/chromedriver/">chromedriver</a>   to be in the <a href="https://askubuntu.com/questions/322772/how-do-i-add-an-executable-to-my-search-path">$PATH</a> as well as having a running <a href="http://docs.seleniumhq.org/download/">selenium stand alone server</a>. Here’s how to open a web page.</p>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kr">import</span> <span class="nn">Test.WebDriver</span>
+    <span class="kr">import</span> <span class="nn">Test.WebDriver.Commands</span>
+    <span class="n">main</span> <span class="o">=</span> <span class="n">runSession</span> <span class="p">(</span> <span class="n">useBrowser</span> <span class="n">chrome</span> <span class="n">defaultConfig</span><span class="p">)</span> <span class="o">$</span> <span class="n">openPage</span> <span class="s">"www.google.com"</span>
+</code></pre></div></div>
+
+<p>To login you can use <a href="https://hackage.haskell.org/package/webdriver-0.8.5/docs/Test-WebDriver-Commands-Wait.html">waitUntil</a> and <a href="https://hackage.haskell.org/package/webdriver-0.8.5/docs/Test-WebDriver-Commands.html">sendKeys</a>.</p>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kr">import</span> <span class="nn">Test.WebDriver</span>
+    <span class="kr">import</span> <span class="nn">Test.WebDriver.Commands</span>
+    <span class="kr">import</span> <span class="nn">Test.WebDriver.Commands.Wait</span>
+    <span class="n">main</span> <span class="o">=</span> <span class="kr">do</span>
+   	<span class="n">openPage</span> <span class="s">"https://latinschool.myschoolapp.com/app#login"</span>
+       	<span class="n">sendKeys</span> <span class="s">"creuter"</span>  <span class="o">=&lt;&lt;</span> <span class="p">(</span><span class="n">waitUntil</span> <span class="mi">20</span> <span class="o">$</span> <span class="n">findElem</span> <span class="p">(</span><span class="kt">ById</span> <span class="s">"Username"</span><span class="p">))</span>
+            <span class="n">sendKeys</span> <span class="s">"myPassword"</span>  <span class="o">=&lt;&lt;</span><span class="p">(</span><span class="n">waitUntil</span> <span class="mi">20</span> <span class="o">$</span> <span class="n">findElem</span> <span class="p">(</span><span class="kt">ById</span> <span class="s">"Password"</span><span class="p">))</span>
+            <span class="p">(</span><span class="n">waitUntil</span> <span class="mi">20</span> <span class="o">$</span> <span class="n">findElem</span> <span class="p">(</span><span class="kt">ById</span> <span class="s">"loginBtn"</span><span class="p">))</span> <span class="o">&gt;&gt;=</span> <span class="n">click</span>
+</code></pre></div></div>
+
+<p>The ById <a href="https://hackage.haskell.org/package/webdriver-0.8.5/docs/Test-WebDriver-Commands.html#t:Selector">selector</a> tells selenium to find an element by it’s id. The <a href="https://hackage.haskell.org/package/webdriver-0.8.5/docs/Test-WebDriver-Commands-Wait.html">waitUntil</a> is necessary because sometimes it takes longer for a web page to load. The <a href="https://haskell-lang.org/tutorial/operators">=«</a> pipes an element into a command. It could be rewritten as.</p>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kr">import</span> <span class="nn">Test.WebDriver</span>
+    <span class="kr">import</span> <span class="nn">Test.WebDriver.Commands</span>
+    <span class="kr">import</span> <span class="nn">Test.WebDriver.Commands.Wait</span>
+    <span class="n">main</span> <span class="o">=</span> <span class="kr">do</span>
+    	 <span class="n">usernameLogin</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">waitUntil</span> <span class="mi">20</span> <span class="o">$</span> <span class="n">findElem</span> <span class="p">(</span><span class="kt">ById</span> <span class="s">"Username"</span><span class="p">)</span>
+    	 <span class="n">sendKeys</span> <span class="s">"creuter"</span> <span class="n">usernameLogin</span>
+    	 <span class="n">passwordTextBox</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">waitUntil</span> <span class="mi">20</span> <span class="o">$</span> <span class="n">findElem</span> <span class="p">(</span><span class="kt">ById</span> <span class="s">"Password"</span><span class="p">))</span>
+    	 <span class="n">sendKeys</span> <span class="s">"myPassword"</span> <span class="n">passwordTextBox</span>
+    	 <span class="n">clickButton</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">waitUntil</span> <span class="mi">20</span> <span class="o">$</span> <span class="n">findElem</span> <span class="p">(</span><span class="kt">ById</span> <span class="s">"loginBtn"</span><span class="p">))</span>
+    	 <span class="n">click</span> <span class="n">clickButton</span>
+    	 <span class="n">liftIO</span> <span class="o">$</span> <span class="n">threadDelay</span> <span class="mi">8000000</span>
+</code></pre></div></div>
+
+<p>Once you’ve logged and the right cookies are set. You can navigate in somewhere else.</p>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">openPage</span> <span class="s">"https://latinschool.myschoolapp.com/app/student#studentmyday/assignment-center"</span>
+    <span class="n">liftIO</span> <span class="o">$</span> <span class="n">threadDelay</span> <span class="mi">8000000</span>
+</code></pre></div></div>
+
+<p>I then scraped the homework through  the findElems function which returns all the elements matching a given selector.</p>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">assigmentTable</span> <span class="o">&lt;-</span> <span class="n">waitUntil</span> <span class="mi">20</span> <span class="o">$</span> <span class="n">findElems</span> <span class="p">(</span><span class="kt">ById</span> <span class="s">"assignment-center-assignment-items"</span><span class="p">)</span>  <span class="c1">-- locate assigment table</span>
+    <span class="n">cells</span> <span class="o">&lt;-</span> <span class="n">findElemsFrom</span> <span class="p">(</span><span class="n">assigmentTable</span> <span class="o">!!</span> <span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="kt">ByXPath</span> <span class="s">"tr"</span><span class="p">)</span>  <span class="c1">-- find all table data rows</span>
+    <span class="n">mocells</span> <span class="o">&lt;-</span> <span class="n">mapM</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">findElemsFrom</span> <span class="n">x</span> <span class="p">(</span><span class="kt">ByXPath</span> <span class="s">"td"</span><span class="p">))</span> <span class="n">cells</span> <span class="c1">-- locate all data columns withing rows</span>
+    <span class="n">mapM</span> <span class="p">(</span><span class="nf">\</span><span class="n">row</span> <span class="o">-&gt;</span> <span class="n">mapM</span> <span class="p">(</span><span class="n">getText</span><span class="p">)</span> <span class="n">row</span><span class="p">)</span> <span class="n">mocells</span> <span class="c1">-- returns text of homework table</span>
+</code></pre></div></div>
+<p>The final Product.</p>
+
+<script src="https://asciinema.org/a/gXSECM7LwipXgA7hgEx1WB11m.js" id="asciicast-gXSECM7LwipXgA7hgEx1WB11m" async=""></script>
+
+
+
+</div>
+
+<div class="pagination">
+  
+  
+    <a href="/2017-11-19/church" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2017-12-22 05:42:50 +0000">2017</time> Chris Reuter && Vedant Pathak. 
+      </span>
+    </footer>
+  </body>
+</html>

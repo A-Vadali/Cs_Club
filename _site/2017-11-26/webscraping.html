@@ -36,7 +36,7 @@
           <h2 class="nav-title">Latin Computer Science Club</h2>
         </a>
         <ul>
-          <li><a href="http://localhost:5002/about">About</a></li>
+          <li><a href="/about">About</a></li>
           <li><a href="/">Posts</a></li>
         </ul>
     </div>
@@ -49,7 +49,7 @@
 
     
       <br>
-      <span>on&nbsp;</span><time datetime="2017-11-26 00:00:00 -0600">November 26, 2017</time>
+      <span>on&nbsp;</span><time datetime="2017-11-26 00:00:00 +0000">November 26, 2017</time>
     
   </div>
 
@@ -60,52 +60,46 @@
 
 <p>I webscraping with Haskell is surprisingly easy using the <a href="https://hackage.haskell.org/package/webdriver">selenium webdriver</a>. I used it to scrape home work from my school site. To launch a browser session use</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>run Session defaultConfig :: WD a -&gt; IO a
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>run Session defaultConfig :: WD a -&gt; IO a
+</code></pre></div></div>
 
 <p>To run these you will need to install <a href="https://sites.google.com/a/chromium.org/chromedriver/">chromedriver</a> as well as having a running <a href="http://docs.seleniumhq.org/download/">selenium stand alone server</a>. Here’s how to open a web page.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>runSession ( useBrowser chrome defaultConfig) $ openPage "www.google.com"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>runSession ( useBrowser chrome defaultConfig) $ openPage "www.google.com"
+</code></pre></div></div>
 
 <p>To login you can use waitUntil and sendKeys.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>openPage "https://latinschool.myschoolapp.com/app#login"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openPage "https://latinschool.myschoolapp.com/app#login"
 sendKeys "creuter"  =&lt;&lt; (waitUntil 20 $ findElem (ById "Username"))
 sendKeys "myPassword"  =&lt;&lt;(waitUntil 20 $ findElem (ById "Password"))
 (waitUntil 20 $ findElem (ById "loginBtn")) &gt;&gt;= click
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The ById command tells selenium to find an element by it’s id. The waitUntil is necessary because sometimes it takes longer for a web page to load. The =« pipes an element into sendkeys. It could be rewritten as.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>usernameLogin &lt;- (waitUntil 20 $ findElem (ById "Username")
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usernameLogin &lt;- (waitUntil 20 $ findElem (ById "Username")
 sendKeys "creuter" usernameLogin
 passwordTextBox &lt;- (waitUntil 20 $ findElem (ById "Password"))
 sendKeys "myPassword" passwordTextBox
 clickButton &lt;- (waitUntil 20 $ findElem (ById "loginBtn"))
 click clickButton
 liftIO $ threadDelay 8000000
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Once you’ve logged and a session is set. You can log in somewhere else.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>openPage "https://latinschool.myschoolapp.com/app/student#studentmyday/assignment-center"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openPage "https://latinschool.myschoolapp.com/app/student#studentmyday/assignment-center"
 liftIO $ threadDelay 8000000
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You can then scrape homework through findElems.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>assigmentTable &lt;- waitUntil 20 $ findElems (ById "assignment-center-assignment-items")  -- locate assigment table
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>assigmentTable &lt;- waitUntil 20 $ findElems (ById "assignment-center-assignment-items")  -- locate assigment table
 cells &lt;- findElemsFrom (assigmentTable !! 0) (ByXPath "tr") 
 mocells &lt;- mapM (\x -&gt; findElemsFrom x (ByXPath "td")) cells
 mapM (\row -&gt; mapM (getText) row) mocells -- returns text of homework table
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Example usage.</p>
 
@@ -117,7 +111,7 @@ mapM (\row -&gt; mapM (getText) row) mocells -- returns text of homework table
 <div class="pagination">
   
   
-    <a href="http://localhost:5002/2017-11-19/church" class="right arrow">&#8594;</a>
+    <a href="/2017-10-20/editors" class="right arrow">&#8594;</a>
   
 
   <a href="#" class="top">Top</a>
@@ -127,7 +121,7 @@ mapM (\row -&gt; mapM (getText) row) mocells -- returns text of homework table
 
     <footer>
       <span>
-        &copy; <time datetime="2017-11-26 18:00:05 -0600">2017</time> Chris Reuter && Vedant Pathak. 
+        &copy; <time datetime="2017-12-22 05:06:43 +0000">2017</time> Chris Reuter && Vedant Pathak. 
       </span>
     </footer>
   </body>

@@ -2,6 +2,7 @@
 layout: post
 title: "Webscraping with Haskell"
 author: "Chris Reuter"
+published: false
 ---
 
 # Haskell web scrapping

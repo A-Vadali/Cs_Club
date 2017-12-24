@@ -41,7 +41,7 @@ The ById [selector](https://hackage.haskell.org/package/webdriver-0.8.5/docs/Tes
     	 liftIO $ threadDelay 8000000
 ```
 
-Once you've logged and the right cookies are set. You can navigate in somewhere else.
+Once you've logged and the right cookies are set. You can navigate to another page.
 ```haskell    
     openPage "https://latinschool.myschoolapp.com/app/student#studentmyday/assignment-center"
     liftIO $ threadDelay 8000000
@@ -57,3 +57,5 @@ I then scraped the homework through  the findElems function which returns all th
 The final Product. 
 
 <script src="https://asciinema.org/a/gXSECM7LwipXgA7hgEx1WB11m.js" id="asciicast-gXSECM7LwipXgA7hgEx1WB11m" async></script>
+
+The completed [source code](https://github.com/Chrisr850/scraping).

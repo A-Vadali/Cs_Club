@@ -56,6 +56,6 @@ I then scraped the homework through  the findElems function which returns all th
 ```
 The final Product. 
 
-<script src="https://asciinema.org/a/gXSECM7LwipXgA7hgEx1WB11m.js" id="asciicast-gXSECM7LwipXgA7hgEx1WB11m" async></script>
+<script src="https://asciinema.org/a/6vkZdPqqrpJxooWZgiXhraPqq.js" id="asciicast-6vkZdPqqrpJxooWZgiXhraPqq" async></script>
 
 The completed [source code](https://github.com/Chrisr850/scraping).

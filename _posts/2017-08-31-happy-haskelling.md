@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Happy Haskelling"
-author: "Chris Reuter"
+author: "Chris"
 ---
 
 # What's Haskell?

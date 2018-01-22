@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Webscraping with Haskell"
-author: "Chris Reuter"
+author: "Chris"
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: " Crush the command line"
-author: "Chris Reuter"
+author: "Chris"
 ---
 
 What is the Command Line? Well it's the thing you see hackers typing into in the [`movies`](https://www.youtube.com/watch?v=dFUlAQZB9Ng). You know with all the [`black and green text`](http://hackertyper.com/). Think of the command line as a control panel for your computer.

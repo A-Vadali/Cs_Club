@@ -17,9 +17,9 @@ markdown:       kramdown
 
 # About
 author:
-  name:         Chris Reuter && Vedant Pathak
+  name:         Chris && Vedant
   url:          ""
-  email:        creuter@lsoc.org || vpathak@lsoc.org
+
 
 # Custom vars
 version:        3.4.1

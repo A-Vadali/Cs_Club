@@ -47,7 +47,7 @@ Once you've logged and the right cookies are set. You can navigate to another pa
     liftIO $ threadDelay 8000000
 ```
 
-I then scraped the homework through  the findElems function which returns all the elements matching a given selector.
+I then scraped the homework through  the [findElems](https://hackage.haskell.org/package/webdriver-0.8.5/docs/Test-WebDriver-Commands.html) function which returns all the elements matching a given selector.
 ```haskell
     assigmentTable <- waitUntil 20 $ findElems (ById "assignment-center-assignment-items")  -- locate assigment table
     cells <- findElemsFrom (assigmentTable !! 0) (ByXPath "tr")  -- find all table data rows

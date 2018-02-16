@@ -45,7 +45,7 @@
     <main>
       <div class="post">
   <div class="post-info">
-    <span>Written by&nbsp;</span>Chris Reuter
+    <span>Written by&nbsp;</span>Chris
 
     
       <br>
@@ -70,7 +70,7 @@
 <h1 id="getting-started">Getting started</h1>
 <p><a href="https://github.com/">Github</a> is a website that offers free git services. Github runs a git server which you can use to work on your projects. However, you don’t have to use github to use git, you can run your <a href="https://git-scm.com/book/en/v1/Git-on-the-Server">own git server</a>. To use git with github. Sign up for a github account. Then hit the green new repository button. Name the repository whatever you want. Then git clone the repository in your terminal. If you haven’t already you’ll need to install <a href="https://git-scm.com/downloads">git</a>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Last login: Mon Sep 11 11:27:01 on ttys000
+<div class="highlighter-rouge"><pre class="highlight"><code>Last login: Mon Sep 11 11:27:01 on ttys000
 Chriss-MacBook-Air:latin-cs-club chris$ git clone git@github.com:latin-cs-club/latin-cs-club.git
 Cloning into 'latin-cs-club'...
 remote: Counting objects: 193, done.
@@ -79,16 +79,18 @@ remote: Total 193 (delta 0), reused 6 (delta 0), pack-reused 179
 Receiving objects: 100% (193/193), 93.63 KiB | 0 bytes/s, done.
 Resolving deltas: 100% (81/81), done.
 Chriss-MacBook-Air:latin-cs-club chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Now change something in this repo (Note that you’ll have to change directory into the github repo, see <a href="http://latincsclub.com/2017-08-19/commmand-line">here</a> for more info). The below command creates a file called README.md.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "Hello" &gt; README.md
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "Hello" &gt; README.md
+</code></pre>
+</div>
 
 <p>To see what has changed type <code class="highlighter-rouge">git status</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git status
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git status
 On branch master
 
 Initial commit
@@ -100,16 +102,18 @@ README.md
 
 nothing added to commit but untracked files present (use "git add" to track)
 Chriss-MacBook-Air:ASAR chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>It’s pretty verbose, to add README.md to the repo type.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git add README.md 
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git add README.md 
+</code></pre>
+</div>
 
 <p>You can now see that it has been added.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git status
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git status
 On branch master
 
 Initial commit
@@ -120,28 +124,31 @@ Changes to be committed:
 new file:   README.md
 
 Chriss-MacBook-Air:ASAR chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>To create a checkpoint you need to commit it. Every checkpoint has a message attached to it.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git commit -m "first edit"
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git commit -m "first edit"
 [master (root-commit) 2ece2ee] first edit
  1 file changed, 1 insertion(+)
 create mode 100644 README.md
 Chriss-MacBook-Air:ASAR chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>You should put your message in between the quotes. It’s good to make it descriptive, so when you go back you know what has changed.
 To sync it with github, you need to push it to their server.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git push
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:ASAR chris$ git push
 Counting objects: 3, done.
 Writing objects: 100% (3/3), 217 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To github.com:Chrisr850/ASAR.git
  * [new branch]      master -&gt; master
 Chriss-MacBook-Air:ASAR chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Now your repo is synced with github, and you will be able to see it on github. The basic work-flow is to check what’s changed with <code class="highlighter-rouge">git status</code> then add the file with <code class="highlighter-rouge">git add &lt;file&gt;</code> and then commit it with <code class="highlighter-rouge">git commit -m "message"</code> and then push it with <code class="highlighter-rouge">git push</code>. Git has <a href="https://git-scm.com/docs">many</a> commands and features, in fact we even use git to host this site, but for normal day to day use you only need to know these four commands. Git is a useful tool to know how to use because it lets you work with your files without ever losing anything. I also recommend <a href="https://help.github.com/articles/connecting-to-github-with-ssh/">enabling ssh</a> for git so that you don’t need to type your username and password every time you push to github.</p>
 
@@ -163,7 +170,7 @@ Chriss-MacBook-Air:ASAR chris$
 
     <footer>
       <span>
-        &copy; <time datetime="2017-12-23 20:24:07 -0600">2017</time> Chris Reuter && Vedant Pathak. 
+        &copy; <time datetime="2018-02-15 19:42:12 -0600">2018</time> Chris && Vedant. 
       </span>
     </footer>
   </body>

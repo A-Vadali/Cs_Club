@@ -45,7 +45,7 @@
     <main>
       <div class="post">
   <div class="post-info">
-    <span>Written by&nbsp;</span>Chris Reuter
+    <span>Written by&nbsp;</span>Chris
 
     
       <br>
@@ -64,26 +64,29 @@
 
 <p>Lambda expressions are way of representing functions.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λx.x
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.x
 
 f(x) = x
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The two expressions above are equivalent. They both return their input. This is what’s called an identity function. To evaluate a lambda expression you replace the variable with what it is being evaluated for.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λx.x
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.x
 ((λx.x) 1)
 1
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Here 1 replaces x.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λx.λy.y
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.λy.y
+</code></pre>
+</div>
 
 <p>The above function has two inputs.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λx.λy.y
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.λy.y
 
 (((λx.λy.y) 2) 1)
 ((λy.y) 1)
@@ -92,28 +95,31 @@ f(x) = x
 (((λx.λy.y) 3) 4)
 ((λy.y) 4)
 4
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>As you can see this function drops it’s first argument.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λx.x+3
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.x+3
 ((λx.x+10) 3)
 (3+10)
 13
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>You can include other operators, like plus, in lambda expressions.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λx.λy.xxy
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.λy.xxy
 ((λx.λy.yxx) +2 ) 1)
 ((λy.y(+2+2)) 1)
 (1+2+2)
 5
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>For an expression to be “pure” lambda calculus in can only include bound variables. When an variable is preceded by a λ it is said to be bound. Below are some famous pure lambda calculus expressions, which are also known as combinators.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λx.λy.x
+<div class="highlighter-rouge"><pre class="highlight"><code>λx.λy.x
 The K combinator always returns the same thing regardless of it's second input.
 
 λx.x
@@ -121,49 +127,55 @@ The I combinator always returns it's first input.
    
 λx.λy.λz.x(zy)
 The C combinator swaps it second and third input.
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="church-encoding">Church Encoding</h2>
 
 <p>Church first came up with a way of representing integers in lambda calculus.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λf.λx.x    represents zero
+<div class="highlighter-rouge"><pre class="highlight"><code>λf.λx.x    represents zero
 λf.λx.fx   represents one
 λf.λx.ffx  represents two
 λf.λx.fffx represents three
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>This allowed Church to begin to represent computation in lambda calculus. Unpacking a church encoded number is fairly simple.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λf.λx.ffx
+<div class="highlighter-rouge"><pre class="highlight"><code>λf.λx.ffx
 (((λf.λx.ffx) 1+ ) 0)
 (λx.(1+1+x) 0)
 (1+1+0)
 2
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Church then went about doing operations on these representations of numbers. The first combinator he found was the successor function which takes a church representation of a number and returns the next church number.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>successor = λn.λf.λx.f (n f x)
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>successor = λn.λf.λx.f (n f x)
+</code></pre>
+</div>
 
 <p>Our expectation is that applying λf.λx.x to the successor function should give us λf.λx.f(x).</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(λn.λf.λx.f (n f x)) λf.λx.x
+<div class="highlighter-rouge"><pre class="highlight"><code>(λn.λf.λx.f (n f x)) λf.λx.x
 (λf.λx.f (((λf.λx.x) f) x))
 (λf.λx.f ((λx.x) x)
 λf.λx.f(x)
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Using this successor function you can then do addition.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>addition = λmλn. n successor m
+<div class="highlighter-rouge"><pre class="highlight"><code>addition = λmλn. n successor m
 addition = λmλn. m f (n f x)  by substituting the successor language
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>It works by applying the successor function the first number of times on the second number.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>one =  λf.λx.f(x)
+<div class="highlighter-rouge"><pre class="highlight"><code>one =  λf.λx.f(x)
 two =  λf.λx.f(f(x))
 ((λm.λn.m f (n f x) one ) two)
 ((λm.λn.m f (n f x) λf.λx.fx) two)
@@ -173,7 +185,8 @@ two =  λf.λx.f(f(x))
 ((λf.λx.f(x)) f (f(f(x)))
 (λx.f(x) f(f(x)))
 f(f(f(x))) which equals three
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Church went on to further develop his encodings. The Church-Turing hypothesis states that both lambda calculus and Turing machines are computationally equivalent.</p>
 
@@ -195,7 +208,7 @@ f(f(f(x))) which equals three
 
     <footer>
       <span>
-        &copy; <time datetime="2017-12-23 20:24:07 -0600">2017</time> Chris Reuter && Vedant Pathak. 
+        &copy; <time datetime="2018-02-15 19:42:12 -0600">2018</time> Chris && Vedant. 
       </span>
     </footer>
   </body>

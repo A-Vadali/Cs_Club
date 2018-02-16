@@ -45,7 +45,7 @@
     <main>
       <div class="post">
   <div class="post-info">
-    <span>Written by&nbsp;</span>Chris Reuter
+    <span>Written by&nbsp;</span>Chris
 
     
       <br>
@@ -69,10 +69,11 @@
 <p><img src="http://latincsclub.com/assets/editors/emacs0.png" alt="emacs" />
 Out of the box, Emacs won’t look very pretty. You can download a copy from <a href="https://www.gnu.org/software/emacs/">GNU</a>. The first thing I like to do is to disable the menu, tool and scroll bars. You can do this by opening a file called .emacs. Press C-x C-f ( C means to press control so you would hit Control x and then Control f) you should see a menu bar at the bottom. Type .emacs into it and hit enter. A new buffer should appear that is empty. Copy and paste the following lines into the file.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(menu-bar-mode -1) 
+<div class="highlighter-rouge"><pre class="highlight"><code>(menu-bar-mode -1) 
 (toggle-scroll-bar -1) 
 (tool-bar-mode -1) 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Then press C-x C-s to save it. Now close Emacs and reopen it, you’ll notice that Emacs now looks more streamlined.</p>
 
@@ -81,7 +82,7 @@ Out of the box, Emacs won’t look very pretty. You can download a copy from <a 
 <p>To install a theme, you’ll need to install Melpa. Melpa is package
 manager that lets you install lots of different Emacs packages. A package manager is something that let’s you easily install others peoples programs.  Insert the following into your .emacs. To set up Melpa.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(require 'package)
+<div class="highlighter-rouge"><pre class="highlight"><code>(require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
      '("melpa" . "https://melpa.org/packages/"))
@@ -95,7 +96,8 @@ manager that lets you install lots of different Emacs packages. A package manage
 
 (use-package cyberpunk-theme
  :ensure t)
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The code above is taken from <a href="http://cestlaz.github.io/stories/emacs/">c’est la z</a>, a great in depth tutorial on Emacs. When you open and close emacs you’ll see the theme.</p>
 
@@ -126,7 +128,7 @@ manager that lets you install lots of different Emacs packages. A package manage
 
     <footer>
       <span>
-        &copy; <time datetime="2017-12-23 20:24:07 -0600">2017</time> Chris Reuter && Vedant Pathak. 
+        &copy; <time datetime="2018-02-15 19:42:12 -0600">2018</time> Chris && Vedant. 
       </span>
     </footer>
   </body>

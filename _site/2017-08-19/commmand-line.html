@@ -45,7 +45,7 @@
     <main>
       <div class="post">
   <div class="post-info">
-    <span>Written by&nbsp;</span>Chris Reuter
+    <span>Written by&nbsp;</span>Chris
 
     
       <br>
@@ -62,21 +62,23 @@
 
 <p>How to open the command line. If your using a mac click on the search light and type terminal into the box and press enter. You should now have a box on the screen. That has something similar to this.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Last login: Sat Aug 19 14:01:03 on ttys000
+<div class="highlighter-rouge"><pre class="highlight"><code>Last login: Sat Aug 19 14:01:03 on ttys000
 Chriss-MacBook-Air:~ chris$
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>What can you type into the terminal? Well, you have to know how to navigate. To see where you are you can type <a href="https://www.tcl.tk/man/tcl8.4/TclCmd/pwd.htm"><code class="highlighter-rouge">pwd</code></a>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Last login: Sat Aug 19 14:01:03 on ttys000
+<div class="highlighter-rouge"><pre class="highlight"><code>Last login: Sat Aug 19 14:01:03 on ttys000
 Chriss-MacBook-Air:~ chris$ pwd
 /Users/chris
 Chriss-MacBook-Air:~ chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><a href="https://www.tcl.tk/man/tcl8.4/TclCmd/pwd.htm"><code class="highlighter-rouge">pwd</code></a> gives you the <a href="https://www.computerhope.com/jargon/p/path.htm"><code class="highlighter-rouge">path</code></a> of where you are on your computer. <a href="http://www.unixguide.net/unix/faq/1.3.shtml"><code class="highlighter-rouge">Pwd stands for print working directory</code></a>. A lot of commands are shortened because they’re quicker to type. Home directories are your starting folder, when you launch a terminal it starts in the home directory, /Users/chris is my home directory. In this directory is my Downloads, Desktop, Pictures … etc folders. To see whats in your home directory type <a href="http://linuxcommand.org/lc3_man_pages/ls1.html"><code class="highlighter-rouge">ls</code></a>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:~ chris$ ls
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:~ chris$ ls
 Applications			Desktop				Library
 PreVeil-Testing			Villefort			school
 Chris Reuter's CV.pdf		Documents			Movies
@@ -86,12 +88,13 @@ Public				bower.json			tale-master
 Chris Reuter's CV1.pdf		Haskell				Pictures
 Purescript			lc.hs
 Chriss-MacBook-Air:~ chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>As you can see I have a lot of folders in my home directory, you should see something similar.
 If at any point you want to read more about a command, say <a href="http://linuxcommand.org/lc3_man_pages/ls1.html"><code class="highlighter-rouge">ls</code></a> you can type <a href="https://www.tutorialspoint.com/unix_commands/man.htm"><code class="highlighter-rouge">man ls</code></a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LS(1)                     BSD General Commands Manual                    LS(1)
+<div class="highlighter-rouge"><pre class="highlight"><code>LS(1)                     BSD General Commands Manual                    LS(1)
 
 NAME
 ls -- list directory contents
@@ -172,22 +175,24 @@ DESCRIPTION
  -l      (The lowercase letter ``ell''.)  List in long format.  (See below.)
  If the output is to a terminal, a total sum for all the file sizes is output on
  a line before the long listing.
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>You can use the arrow keys to move up and down and type q to quit. That’s a lot of information, but you don’t have to memorize it! You can just look it up at any time. Man stands for manual if you haven’t already guessed that.</p>
 
 <p>So now we know how to see where we are and see what’s there. To change where we are you can use<a href="http://linuxcommand.org/lc3_man_pages/cdh.html"><code class="highlighter-rouge">cd</code></a>. So from my home directory let’s say I want to go to my downloads. I can type cd Downloads/</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:~ chris$ cd Downloads/
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:~ chris$ cd Downloads/
 Chriss-MacBook-Air:Downloads chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The slash at the end means it’s a directory. Directory is just computer nerd speak for a folder. Notice how the <a href="https://en.wikibooks.org/wiki/Guide_to_Unix/Explanations/Shell_Prompt"><code class="highlighter-rouge">prompt</code></a> changes to include Downloads, the prompt is the thing that occurs before the
 <code class="highlighter-rouge">$</code> sign.</p>
 
 <p>Let’s see what’s in my Downloads.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ ls
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ ls
 18620254_1987587898129254_5717056479093310776_n.jpg	Doc Apps—USSoc.docx
 alex.pem						2012-08-01 pro-se-reply-brief.August 2012.pdf
 Epic_53.0.2785.143 (1).dmg				captain-log
@@ -223,12 +228,13 @@ xmoto-0.5.10-macosx.zip					Critical Essay Tips (1).docx
 Unconfirmed 751700.crdownload				Critical Essay Tips.docx
 X-Moto.app
 Chriss-MacBook-Air:Downloads chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Wow, that’s a lot of stuff! I should really delete some of it.
 To delete a file we can use the <a href="https://linux.die.net/man/1/rm"><code class="highlighter-rouge">rm</code></a> command. Be warned rm doesn’t move things into the trash bin. It just deletes it. <code class="highlighter-rouge">once you rm something it is well and truly gone</code>. <a href="https://unix.stackexchange.com/questions/2677/recovering-accidentally-deleted-files?noredirect=1&amp;lq=1"><code class="highlighter-rouge">Consider yourself officially warned</code></a>. Most command line tools assume you know what your doing, so it’s possible to break your OS if you delete the wrong file. I don’t need all these copies of my CV so let’s delete them. To delete Chris Reuter CV.pdf I can type <code class="highlighter-rouge">rm Chris\ Reuter\ CV.pdf</code>. The \ escapes the spaces. Spaces have a special meaning in the command line. Without the \ rm would try to delete the file Chris, the file Reuter and the file CV.pdf. Since rm interprets everything separated by a space as a different file. So when we add a \ it means that the space just means a regular space and not a different file.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm Chris\ Reuter\ CV.pdf
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm Chris\ Reuter\ CV.pdf
 Chriss-MacBook-Air:Downloads chris$ ls
 18620254_1987587898129254_5717056479093310776_n.jpg	Doc Apps—USSoc.docx
 X-Moto.app 						2012-08-01 pro-se-reply-brief.August 2012.pdf
@@ -264,11 +270,12 @@ Unconfirmed 407272.crdownload				tale-master-1.zip
 Critical Essay Tips.docx				Unconfirmed 751700.crdownload
 xmoto-0.5.10-macosx.zip					Epic_53.0.2785.143 (1).dmg
 Chriss-MacBook-Air:Downloads chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Now it’s gone. However, if I delete one file at a time it’s going to take forever! Unix has a feature called the <a href="http://www.robelle.com/smugbook/wildcard.html"><code class="highlighter-rouge">wild card</code></a> which allows you to delete multiple files at once. If I want to delete all files starting with Chris\ Reuter. I can just type rm Chris\ Reuter*. The * is called a wild card and it means to delete every file that starts with Chris Reuter.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm Chris\ Reuter*
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm Chris\ Reuter*
 Chriss-MacBook-Air:Downloads chris$ ls
 18620254_1987587898129254_5717056479093310776_n.jpg	KeePass2.23.zip
 console-master.zip					2012-08-01 pro-se-reply-brief.August 2012.pdf
@@ -299,11 +306,12 @@ xmoto-0.5.10-macosx.zip					Firefox.zip
 captain-log-20170815T032940Z-001.zip			KeePass2.23.app
 chromedriver_mac64.zip
 Chriss-MacBook-Air:Downloads chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Now that that’s gone. How about those .crdownload files? To delete these we can use the wild card again. To delete everything ending with .crownload I can use  <code class="highlighter-rouge">rm *.crdownload</code>. Now it pattern matches at the front.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm *.crdownload
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm *.crdownload
 Chriss-MacBook-Air:Downloads chris$ ls
 18620254_1987587898129254_5717056479093310776_n.jpg	KeePass2.23.app
 fish-1.1						2012-08-01 pro-se-reply-brief.August
@@ -333,12 +341,13 @@ xmoto-0.5.10-macosx.zip					Firefox 54.0.1.dmg
 chromedriver_mac64.zip					Firefox.zip
 console-master.zip
 Chriss-MacBook-Air:Downloads chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Pass.kdbx is an important password file so let’s move that into the home directory to save it for later.
 To move a file we use the command <a href="https://linux.die.net/man/1/mv"><code class="highlighter-rouge">mv</code></a>. Mv takes two arguments the file to move and where it’s going. To move my pass.kdbx file back into my home directory I can write <code class="highlighter-rouge">mv pass.kdbx ../</code>. <code class="highlighter-rouge">../</code> is a shortcut to move the file into the directory above it.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ mv pass.kdbx ../
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ mv pass.kdbx ../
 Chriss-MacBook-Air:Downloads chris$ ls
 18620254_1987587898129254_5717056479093310776_n.jpg	Firefox.zip				
 chromedriver_mac64.zip					2012-08-01 pro-se-reply-brief.August 2012.pdf	
@@ -367,11 +376,12 @@ captain-log						tale-master-1.zip
 Firefox 54.0.1.dmg					captain-log-20170815T032940Z-001.zip	
 xmoto-0.5.10-macosx.zip
 Chriss-MacBook-Air:Downloads chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Alex.pem and github-recover-codes.txt are also important files so let’s move into my home for safe keeping.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ ls
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ ls
 18620254_1987587898129254_5717056479093310776_n.jpg	Firefox.zip						
 console-master.zip 2012-08-01 pro-se-reply-brief.August	2012.pdf		
 KeePass2.23.app    		  			fish-1.1
@@ -398,11 +408,12 @@ xmoto-0.5.10-macosx.zip					Firefox
 captain-log-20170815T032940Z-001.zip			Firefox 54.0.1.dmg	
 chromedriver_mac64.zip
 Chriss-MacBook-Air:Downloads chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Those .jpgs are wallpapers from the movie <a href="https://www.youtube.com/watch?v=1Fg5iWmQjwk"><code class="highlighter-rouge">The Grand Budapest Hotel</code></a>, which I highly recommend. I could just move those into the home directory, but let’s move them into a wallpaper directory. To make a directory we can use the <a href="https://linux.die.net/man/1/mkdir"><code class="highlighter-rouge">mkdir</code></a> command. So let’s make a wallpaper directory in the home folder.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ mkdir ../wallpapers
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ mkdir ../wallpapers
 Chriss-MacBook-Air:Downloads chris$ mv *.jpg ../wallpapers/
 Chriss-MacBook-Air:Downloads chris$ ls
 2012-08-01 pro-se-reply-brief.August 2012.pdf	Firefox
@@ -428,14 +439,16 @@ fish-1.1.tar.gz					tale-master-1.zip
 Epic_53.0.2785.143.dmg				Remembering The Day After.REV'17.docx	
 geckodriver-v0.18.0-macos.tar.gz		xmoto-0.5.10-macosx.zip
 Chriss-MacBook-Air:Downloads chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>I don’t need anymore of this stuff in my downloads, so let’s nuke it. <code class="highlighter-rouge">Rm -rf *</code> will delete everything in a directory. The <code class="highlighter-rouge">-rf</code> just means to also delete the directories in the directories where deleting things.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm -rf *
+<div class="highlighter-rouge"><pre class="highlight"><code>Chriss-MacBook-Air:Downloads chris$ rm -rf *
 Chriss-MacBook-Air:Downloads chris$ ls
 Chriss-MacBook-Air:Downloads chris$ 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>This has only covered a hand full of commands, but I hope it was a stepping stone into the world of the command line. If you want a full list of commands on your system you can type <code class="highlighter-rouge">ls /usr/bin/</code>. There’s a lot of them, but with <code class="highlighter-rouge">man</code> or your friend Google you can figure most of them out.</p>
 
@@ -458,7 +471,7 @@ Chriss-MacBook-Air:Downloads chris$
 
     <footer>
       <span>
-        &copy; <time datetime="2017-12-23 20:24:07 -0600">2017</time> Chris Reuter && Vedant Pathak. 
+        &copy; <time datetime="2018-02-15 19:42:12 -0600">2018</time> Chris && Vedant. 
       </span>
     </footer>
   </body>

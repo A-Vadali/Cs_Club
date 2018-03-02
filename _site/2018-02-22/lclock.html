@@ -131,7 +131,7 @@ instance Ord Time where
   (Time a b) `compare` (Time c d) = compare (a*60+b) (c*60+d)
 
 ``` 
-[startTime] is when the block start and [endTime] is when the block ends and [block] represents the block name A through H. I then encoded the schedule a list of blocks.
+[startTime]() is when the block start and [endTime]() is when the block ends and [block]() represents the block name A through H. I then encoded the schedule as a list of blocks.
 
 ```haskell
 
@@ -164,7 +164,7 @@ day1 = [ Block (Time 8 0) "A" (Time 9 30),
 
     <footer>
       <span>
-        &copy; <time datetime="2018-03-01 21:34:01 -0600">2018</time> Chris && Vedant. 
+        &copy; <time datetime="2018-03-01 21:41:29 -0600">2018</time> Chris && Vedant. 
       </span>
     </footer>
   </body>
